@@ -1,0 +1,3229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="BCP" name="BCP" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.7.0">
+  <decision id="nlpbarriers" name="nlpbarriers">
+    <informationRequirement id="InformationRequirement_1bowpsn">
+      <requiredInput href="#barrier" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_02tavsp">
+      <requiredInput href="#condition" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1tzo96m">
+      <requiredInput href="#maritalstatus" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0bafkr9">
+      <requiredInput href="#gender" />
+    </informationRequirement>
+    <decisionTable id="decisionTable_1" hitPolicy="COLLECT">
+      <input id="input_1" label="Barrier class" biodi:width="191">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>barrier</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_00qlu3s" label="Condition">
+        <inputExpression id="LiteralExpression_08lb514" typeRef="string">
+          <text>condition</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1y7s38t" label="Gender">
+        <inputExpression id="LiteralExpression_0nevp78" typeRef="string">
+          <text>gender</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1smg6d7" label="Martial Status">
+        <inputExpression id="LiteralExpression_186fp25" typeRef="string">
+          <text>maritalstatus</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1u8yae9">
+        <inputExpression id="LiteralExpression_1lw95lw" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_1fad5lz" label="Keywords" name="keywords" typeRef="string" />
+      <output id="OutputClause_01noel8" label="Intervention" name="intervention" typeRef="string" />
+      <output id="OutputClause_1bil7o1" label="Patient action" name="patientaction" typeRef="string" />
+      <output id="OutputClause_1q5bf54" label="CM Task" name="cmtask" typeRef="string" />
+      <output id="OutputClause_14gqs43" label="Link" name="link" typeRef="string" />
+      <rule id="DecisionRule_1xc4yfu">
+        <inputEntry id="UnaryTests_0bwkd0y">
+          <text>"B-NC medication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01gf45q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yb7ag9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01w66nr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01telve">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xwxfe0">
+          <text>"non compliance with medication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ug7xz4">
+          <text>"Patient educational materials in regards to medication regimen importance"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ko2cff">
+          <text>"Patient will be compliant with medication regimen"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01oge0a">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vqmcfv">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_05fo2hu">
+        <inputEntry id="UnaryTests_1f9vwep">
+          <text>"B-NC treatment plan"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1whpaba">
+          <text>"hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qnp00d">
+          <text>"female"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14m9bts">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vhhwtq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12zz13f">
+          <text>"non compliance with treatment"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1llpfze">
+          <text>"Patient teaching will be done on the importance of maintaining her primary doctor's treatment plan to maintain stable medications and blood pressure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ha0e8j">
+          <text>"Patient will be compliant with her primary doctor's treatment plan"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18vanfx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0batoqj">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wr9rti">
+        <inputEntry id="UnaryTests_1xc2htg">
+          <text>"B-NC treatment plan"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02e1yli">
+          <text>"hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rkqh1e">
+          <text>"male"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0oqymxw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ynh9ms">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0e3v6s6">
+          <text>"non compliance with treatment"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15bint0">
+          <text>"Patient teaching will be done on the importance of maintaining his primary doctor's treatment plan to maintain stable medications and blood pressure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zdqan3">
+          <text>"Patient will be compliant with his primary doctor's treatment plan"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tw3sx3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03ghfaw">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07mqhqx">
+        <inputEntry id="UnaryTests_1p7sp9c">
+          <text>"B-NC treatment plan"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03sgyjp">
+          <text>"diabetes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hpavw0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k1wlfn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vny411">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19tcgdk">
+          <text>"uncontrolled diabetes"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lf27n6">
+          <text>"CM to send a nutritionist and home health nurse to the patient's home for educational purposes"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zmfg98">
+          <text>"Patient will participate with nutritionist and home health nurse teachings"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01r2l1d">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11bj38w">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xjfaab">
+        <inputEntry id="UnaryTests_15n3xx5">
+          <text>"B-NC treatment plan"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i1ofuq">
+          <text>"hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pqv7i1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rwhcw9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tatfjc">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1n770yv">
+          <text>"uncontrolled hypertension"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19cqqq5">
+          <text>"CM to send a home dietician visit"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1oau114">
+          <text>"Patient will participate and follow dietician recommendations"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zmmk7p">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07fg8aw">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12nh1d9">
+        <inputEntry id="UnaryTests_0ckas11">
+          <text>"B-NC wellness visits"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_104a2n5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xsu81b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jzxevh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18pozcz">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vyw041">
+          <text>"missing doctor visits"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jbdzgs">
+          <text>"CM will do patient teaching on the importance of keeping wellness visits in order to review existing health problems and determine future health goals"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0b5u339">
+          <text>"Patient will be compliant with wellness visits"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pmop8a">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0oh9334">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1q3fipg">
+        <description>"substance abuse"</description>
+        <inputEntry id="UnaryTests_1l5uzgi">
+          <text>"B-alcohol abuse"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zyj1dt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vv63ba">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l55iid">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1355zc5">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0n3b0ym">
+          <text>"alcohol abuse|alcohol use"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nz3fn3">
+          <text>"CM will assist patient in finding a program to quit drinking such as a local AA group near the patient' home"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hrx6od">
+          <text>"Patient will participate in a program to quit drinking"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02lbe9t">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qsmjdu">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0vdoblf">
+        <inputEntry id="UnaryTests_1bz6k08">
+          <text>"B-drug abuse"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_128x8qv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x7bv37">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yxz93e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r51d6g">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13esimz">
+          <text>"drug abuse"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06oxtrr">
+          <text>"CM will arrange couseling through the patient's mental health benefit"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0va0jmm">
+          <text>"Patient will participate in the counseling program"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1me55f3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08zlucu">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ydjjwk">
+        <inputEntry id="UnaryTests_09w2sfm">
+          <text>"B-homeless"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u56fyo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fch1wt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h97r2h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11sn00x">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1d169xu">
+          <text>"homeless"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ahgq6p">
+          <text>"CM will assist patient in finding a shelter while she works on assisting the patient in finding a stable place to live"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_023djpc">
+          <text>"Patient will adhere to the rules of the shelter and assist CM in finding a stable home"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19ebyyb">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13ojt4h">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ugzywn">
+        <inputEntry id="UnaryTests_1r3daaq">
+          <text>"B-knowledge deficit"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tp5nnf">
+          <text>"diabetes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0csm0wf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19re85y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1omqywn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06o0ik4">
+          <text>"knowledge gap"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0j49uj9">
+          <text>"CM will send patient educational pamphlets and links on diabetes"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_083ipcd">
+          <text>"Patient will read all educational materials and links provided "</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ffqzmh">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0g124zk">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zgma1o">
+        <inputEntry id="UnaryTests_1xj5q3r">
+          <text>"B-knowledge deficit"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ae1s1o">
+          <text>"hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rfmrk7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1172ovr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qz6wva">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rgp9yx">
+          <text>"knowledge gap"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0j7jrx4">
+          <text>"CM will send patient educational pamphlets and links on hypertension"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_162xpff">
+          <text>"Patient will read all educational materials and links provided "</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0l3pvf9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vdp2qc">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_120eiy4">
+        <inputEntry id="UnaryTests_1c7czoh">
+          <text>"B-no caregiver","B-no family support"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0trng1d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07za6fy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yfd8j3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sj1ahi">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0oin8a7">
+          <text>"alone"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w7febu">
+          <text>"CM will assist the patient in getting IHSS if the patient meets for these services"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cz657v">
+          <text>"Patient will work with her CM to possibly get IHSS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1er3flc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14a6ui8">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01hcesj">
+        <inputEntry id="UnaryTests_06jh2jy">
+          <text>"B-no transportation"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fyw6vf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y1ohzk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00qm56e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_083g5zk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lkro9q">
+          <text>"no transportation"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14u60ca">
+          <text>"CM will check patient's transportaion benefit and set up transportation for the patient's appointments"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05k9gaf">
+          <text>"Patient will attend his appointments and use transportation arranged by his CM"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1v84yes">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pc4ghb">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_18kfhpo">
+        <inputEntry id="UnaryTests_11mmkua">
+          <text>"B-non compliance"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h2r9dg">
+          <text>"diabetes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07nm9qa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j48znl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ghuckx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ffmdao">
+          <text>"non compliance"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sxao8x">
+          <text>"CM will do patient teaching on following doctors orders and importance of checking bloos sugar levels"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hffpyi">
+          <text>"Patient will check his sugar levels in the evening as per doctor orders"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pjvyvt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mivl8m">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1nebjiy">
+        <inputEntry id="UnaryTests_13auhkn">
+          <text>"B-non english speaker"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cbkupw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hzl3et">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mct0l4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18gytxh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1oaquk1">
+          <text>"language help"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1417ats">
+          <text>"CM will coordinate with interpreter services for the patients next doctors visit"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z83kik">
+          <text>"Patient will use interpreter services arrange by her care manager for her next doctors visit"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rusibk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xpsxad">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wt2vrw">
+        <inputEntry id="UnaryTests_0gcs0p9">
+          <text>"B-pain","B-ineffective pain medication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u2uhl6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_117helu">
+          <text>"female"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_150n0my">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rpna9o">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1x9b5xh">
+          <text>"uncontrolled pain"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n4ffz4">
+          <text>"CM will coordintate with PCP to generate a referral for a pain managment consult and follow up"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sb4rl1">
+          <text>"Patient will attend her consult for pain management"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vvxyjh">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fasniw">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qp44ga">
+        <inputEntry id="UnaryTests_19lle56">
+          <text>"B-pain","B-ineffective pain medication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_075jpkt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vv55s0">
+          <text>"male"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1t53jg0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ew5b2y">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03isrhm">
+          <text>"uncontrolled pain"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ozb0jk">
+          <text>"CM will coordintate with PCP to generate a referral for a pain managment consult and follow up"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nonwc3">
+          <text>"Patient will attend his consult for pain management"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xu2lm2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rkkali">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1jg61cw">
+        <inputEntry id="UnaryTests_1w7a5wp">
+          <text>"B-recreational drugs"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07chbz3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yc97qg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fkyd06">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12riihm">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05wgb9n">
+          <text>"using recreational drugs"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11697g1">
+          <text>"CM will coordintate with PCP to generate a referral for a social worker or substance cessation program"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18twjy1">
+          <text>"Patient will cooperate with social worker and attend substance program"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0i7k950">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y6tzpr">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19t7gpn">
+        <inputEntry id="UnaryTests_1082b2c">
+          <text>"B-religious constraints"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11o2mpg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yke3qe">
+          <text>"female"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10bdwhd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_085jhzi">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ut018t">
+          <text>"religious restrictions"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07hehr2">
+          <text>"CM will work with healthplan to assign a female provider"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ecmb64">
+          <text>"Patient will see female provider as assigned"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0utcbxm">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cctxxa">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1cj9xqq">
+        <inputEntry id="UnaryTests_02ok83g">
+          <text>"B-tobacco use"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nut227">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hpo91k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wwpijw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xctl7o">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1584wzz">
+          <text>"tobacco use"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1b3lirs">
+          <text>"CM will send patient educational pamphlets on the effects of tobacco "</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nd7tma">
+          <text>"Patient will read educational materials received about smoking and its effects"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hjs4lk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_057g6qz">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01cvyho">
+        <inputEntry id="UnaryTests_08io7of">
+          <text>"B-unemployed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1505k5o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j3v7ri">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cxy9ki">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c1nphy">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02923m1">
+          <text>"unemployed"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_093t62n">
+          <text>"CM will coordintate with PCP to generate a referral for a social worker to assist with resources"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n3dv9s">
+          <text>"Patient will work with social worker on possibly obtaining a job"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1iys5yq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lyqsg9">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ootpar">
+        <inputEntry id="UnaryTests_08r8f8r">
+          <text>"B-No Glucometer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c09i1w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dwi7yg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06euve5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16te30h">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1g46483">
+          <text>"No Glucometer"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06ju38d">
+          <text>"CM will coordintate with PCP to generate a referral for a glucometer (based on patient benefit)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16t3su4">
+          <text>"Patient will take blood sugar as per doctor orders  and supply it to PCP on next visit"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0p4ffrw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vgjg4a">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0snsic4">
+        <inputEntry id="UnaryTests_1nxclca">
+          <text>"B-No Blood Pressure Monitor"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v9eik1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08aohyn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03wbv1k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hets4h">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06xrf6o">
+          <text>"No Blood Pressure Monitor"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15jzf87">
+          <text>"CM will coordintate with PCP to generate a referral for a blood pressure monitor (based on patient benefit)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01btdhm">
+          <text>"Patient will measure blood pressure and supply it to PCP on next visit"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x1dj9d">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sdgnzi">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1w7n1iy">
+        <inputEntry id="UnaryTests_02t00mu">
+          <text>"B-NC excercise regimen"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ju859b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00ul3ga">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iqw292">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ryh2t5">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19jw27o">
+          <text>"non compliance with exercise"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0b4ht9s">
+          <text>"CM will conduct patient teaching on importance of excecising to lower blood pressure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bsl7kn">
+          <text>"Patient will gradually start to incorporate excercise as part of his daily plan"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1342fsv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sm3461">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1iiglv5">
+        <inputEntry id="UnaryTests_0jl4dc8">
+          <text>"B-NC with diet"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xcwl57">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_113jqg6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14n9dc1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dzksz4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hwkbic">
+          <text>"non compliance with diet"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16at41f">
+          <text>"CM will coordintate with PCP to generate a referral for a nutritionist consult and follow up"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kyemfx">
+          <text>"Patient will attend nutritionist consult and follow up"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u3ab7u">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07d2nia">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0k4g6rm">
+        <inputEntry id="UnaryTests_177j9v4">
+          <text>"B-excessive sodium intake"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sql4xz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rn6rgy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hcnf7b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0p3685v">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03yiulm">
+          <text>"excessive salt intake"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12aph1l">
+          <text>"CM will assist the patient with food resources and a nutritionist consult"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_180pin6">
+          <text>"Patient will use resources and assist nutritionies consult"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_184triz">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0u5elie">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0stpgh8">
+        <inputEntry id="UnaryTests_1b0dso4">
+          <text>"B-excessive sugar intake"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1db5yal">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1udemry">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gc3ost">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0582oih">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bi3x31">
+          <text>"excessive sugar intake"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xg741d">
+          <text>"CM will coordinate with PCP on generating a referral for outpatient nutritionist consult and follow up"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x3xurg">
+          <text>"Patient will participate adhere and participate with nutritionist recommendations"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t0enrn">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1f78fge">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1epzgcb">
+        <inputEntry id="UnaryTests_06ingl2">
+          <text>"B-Lack of motivation/willpower"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_035w7er">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hzj6oq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mxt6am">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13lnvvj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bs35hq">
+          <text>"Lack of motivation"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kiosq4">
+          <text>"CM will coordinate with PCP and generate a referral for a home visiting social worker/mental health provider"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0njsgre">
+          <text>"Patient will participate with social worker or assist a outpatient mental health clinic"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xdos6s">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17uqkvw">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1f364la">
+        <inputEntry id="UnaryTests_1kx8cn6">
+          <text>"B-Lack of energy"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ot9iiy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0irjnch">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04b14tu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10r6q4p">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_111nu27">
+          <text>"lack of energy"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01xvf8h">
+          <text>"CM will send educational materials/links on in-home excercises "</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r9ptjt">
+          <text>"Patient will participate in in-home excercises"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qcxb8a">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0o8rp6n">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ul9pqy">
+        <inputEntry id="UnaryTests_1r8gqtk">
+          <text>"B-Sedentary lifestyle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ghyl0f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x96ql7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1axkfq5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xih5rn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ntlra9">
+          <text>"Sedentary lifestyle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x6frl3">
+          <text>"CM will coordinate with PCP and generate a referral for a outpatient physical and occupational therapy"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kyxzmy">
+          <text>"Patient will participate in physical and occupational therapy program"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18qe0fn">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0di22gg">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0670qkj">
+        <inputEntry id="UnaryTests_0rof2ay">
+          <text>"B-Unable to take time off of work"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wdteo3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1faulr0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dbln4o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lg7wkz">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1i5a9zi">
+          <text>"no time off at work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1juidcr">
+          <text>"CM will assit patient with home delivery prescriptions and will send the patient a list of contracted urgent care facilities close to his home"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1r0f4ti">
+          <text>"Patient will use the urgent care list provided and will request one day for his doctor follow up visits "</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12ub3kp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_180fevn">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01epsco">
+        <inputEntry id="UnaryTests_1flm9pk">
+          <text>"B-No resources"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ig2s5s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_084a5pa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vli3ha">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xe6sgg">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0f9c28z">
+          <text>"no resources"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hdwud3">
+          <text>"CM will check patients availability of resources such as CBAS, meals on wheels, or transportation"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hqir00">
+          <text>"Patient will use available resources"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19g5381">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19i3q28">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19r6eoe">
+        <inputEntry id="UnaryTests_1b7sy7u">
+          <text>"B-Depression"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08gn2er">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h3lfp5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0170kid">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hn0cmc">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ei9oyd">
+          <text>"experiancing depression"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ymcyb9">
+          <text>"CM will coordinate with PCP and generate a referral for a home visiting social worker/mental health provider"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05xdoti">
+          <text>"Patient will participate with social worker or assist a outpatient mental health clinic"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ar6yjb">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05ix7ni">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15im6pi">
+        <inputEntry id="UnaryTests_01h7g60">
+          <text>"B-Lack of community resources"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rn5cbq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cj3s6m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16y22a0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ra43hp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1uxt57l">
+          <text>"Lack of community resources"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ejztuf">
+          <text>"CM will check patients transportation benefits and coordinate available community services which the patient can participate in"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17werwq">
+          <text>"Patient will use transportation and participate in community programs such as CBAS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06rj617">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mz6pr1">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_095r9tw">
+        <inputEntry id="UnaryTests_1wwrxzf">
+          <text>"B-Second hand smoke exposure"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yxzesy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09ql4nn">
+          <text>"female"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ltvolk">
+          <text>"married"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p5z78g">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vgcudt">
+          <text>"Second hand smoke exposure|pulmonary"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nfd81g">
+          <text>"CM will do educational teaching to both patient and husband on the side effects of second hand smoke and the effects on the patients current condition"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11ob5yj">
+          <text>"Patient and husband will work on creating a smoke free home"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ej83h0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ow2qv2">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ir0yh4">
+        <inputEntry id="UnaryTests_028kg7r">
+          <text>"B-uncontrolled pain"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17jkg6s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fuoh56">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18gvycn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s2i8sj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11lnp86">
+          <text>"uncontrolled pain"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0u2q3oc">
+          <text>"CM will coordinate with PCP and generate a referral to pain management"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ofqa63">
+          <text>"Patient will participate in pain managment program"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04o32co">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wfk1gh">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1yqbn6u">
+        <inputEntry id="UnaryTests_1rckp11">
+          <text>"B-unable to read/write"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fi85p1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ibzhzi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_174alie">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11ev5mt">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ck45cv">
+          <text>"unable to read or write"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15rtdob">
+          <text>"CM will work on links and programs to help the patient learn to read and write"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zm259d">
+          <text>"Patient will attend programs for reading and writing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fgjpcu">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0anj13s">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jjgqm8">
+        <inputEntry id="UnaryTests_0l7mq7u">
+          <text>"B-Legally blind"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15uxan3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kcpxyc">
+          <text>"male"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0eyfj18">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07ngem9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1homlql">
+          <text>"Legally blind"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d66bcv">
+          <text>"CM will coordinate with PCP and assist patient in getting him DME that will assist him with ADL's and a social worker evaluation for IHSS assistance"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rirvxp">
+          <text>"Patient will use quipment approved by health plan"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1eaapdr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zii6r2">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1kev9c5">
+        <inputEntry id="UnaryTests_0tix3dk">
+          <text>"B-Legally blind"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fe4fwt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ncacpb">
+          <text>"female"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1be6igc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1swr1i3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07ypewp">
+          <text>"Legally blind"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h5ojs0">
+          <text>"CM will coordinate with PCP and assist patient in getting her DME that will assist her with ADL's and a social worker evaluation for IHSS assistance"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vmycv7">
+          <text>"Patient will use quipment approved by health plan"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05g8a9a">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rdm4u4">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1kr3sd1">
+        <inputEntry id="UnaryTests_1fm6iwh">
+          <text>"B-forgetful"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tpc8fu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ele6ho">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qm4fsk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_013khe2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1elzk3y">
+          <text>"forgetful"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fbysaf">
+          <text>"CM will coordinate with PCP and generate a home health nursing visit referral to assist the patient set up a pill box and reminders such as alarms, also a social worker to assist in IHSS process"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wo1u73">
+          <text>"Patient will participate and work with nurse and social worker in order to qualify for IHSS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_000mkjc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_003nd8p">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1c1fs82">
+        <inputEntry id="UnaryTests_0miqwfo">
+          <text>"B-No DME"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u68y90">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bc262z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fytj9h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zuwlqo">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04n4ipm">
+          <text>"no durable medical equipment|no DME"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rwnegn">
+          <text>"CM will coordinate with PCP and generate a referral for a FWW with seat"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ccitl0">
+          <text>"Patient will use new FWW for ambulation and self care"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xnmgz2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12sb6co">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0milue6">
+        <inputEntry id="UnaryTests_07xwclm">
+          <text>"B-Polypharmacy"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ihv3o1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17x6hsu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_111ex00">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1k3aooy">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rhsyj7">
+          <text>"Polypharmacy"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14q67g2">
+          <text>"CM will coordinate with PCP for a home health nursing to do a medication reconciliation and visit"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1trau13">
+          <text>"Patient will participate and work with nurse and pharmacist on reconcilliation"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1df8urp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12sdgz9">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0bisfj0">
+        <inputEntry id="UnaryTests_06w8qjw">
+          <text>"B-No IHSS"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c4kgex">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hke42c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ji5tug">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hlj6y5">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1uulu3w">
+          <text>"No IHSS|no in home health services"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dmemce">
+          <text>"CM will work on obtaining IHSS for the patient"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jmk0fy">
+          <text>"Patient will work with CM for any documents IHSS may need per her application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w9pf1g">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d1fljb">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ixlhob">
+        <inputEntry id="UnaryTests_1yjoq1w">
+          <text>"B-Low IHSS hours"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y6t7dy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qdmzv7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09hkgd8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07btoo2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0veseso">
+          <text>"Low IHSS hours|low in home health services"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19kz50i">
+          <text>"CM will work on calling IHSS case worker and assist in obtaining more hours"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xy23ct">
+          <text>"Patient will work with CM for any documents IHSS may need per her application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0eri7me">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wncdn6">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1jfqijp">
+        <inputEntry id="UnaryTests_0vftaaj">
+          <text>"B-Lives in a remote area"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13l7cxt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ispi0f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ie9nnq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ba2v4b">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1x0xxg1">
+          <text>"Lives in a remote area"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mpj089">
+          <text>"CM will assist in arranging transportation services"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kcedpm">
+          <text>"Patient will attend appointments through usage of transportation arranged by CM"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0q29kc1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vtfj5o">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_169bt67">
+        <inputEntry id="UnaryTests_150rupp">
+          <text>"B-dislikes provider"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g7510z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14g3sph">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07w7v35">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ljqc83">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0okdlwq">
+          <text>"dislikes provider"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04ur5ar">
+          <text>"CM to assist the patient in obtaining a new provider"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fualve">
+          <text>"Patient to attend appointment to new provider"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0il3ot4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1olj97i">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gz8aql">
+        <inputEntry id="UnaryTests_1xf266p">
+          <text>"B-No interpreter services"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qxndze">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p49pue">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16sqwz0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zeghhq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0sndw17">
+          <text>"No interpreter services"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12rfs7e">
+          <text>"CM will assist in arranging translation services for next doctors appointment"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0anitni">
+          <text>"Patient will utilize interpreter services at his next doctors visit"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kehxmn">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08l3gyi">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0lbmp0c">
+        <inputEntry id="UnaryTests_1odqs0n">
+          <text>"B-lack of benefits"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lhfdze">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09035dt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ph2ss2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_004au00">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a78cki">
+          <text>"lack of benefits"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0j2jv2j">
+          <text>"CM will coordinate with social worker for possible medicaid benefits"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bq6va7">
+          <text>"Patient will work with CM and apply for medicaid benefits"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1iy7lwz">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0o979lu">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1n0obko">
+        <inputEntry id="UnaryTests_0kyi3tp">
+          <text>"B-lack of availability of services"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_090msdv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14p0nja">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1s56i1j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04r5vy4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qpcua7">
+          <text>"lack of availability of services"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xd9auo">
+          <text>"CM to assist in providing patient a closer provider to where he lives"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0t4zwhh">
+          <text>"Patient to attend appointment to new provider"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ior5go">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ez1hi3">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1uy1q9g">
+        <inputEntry id="UnaryTests_1ra4cqs">
+          <text>"B-High cost medications"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02b1bni">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vxq7e1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g4xlnr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0774781">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12z21f7">
+          <text>"High cost medications"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07ng8w0">
+          <text>"CM to assist patient with sending links to services that assist with medication cost"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hzjoeu">
+          <text>"Patient will use links provided by CM to obtain medications"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1svic99">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04xj25q">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rcjzti">
+        <inputEntry id="UnaryTests_1qbisfl">
+          <text>"B-low digital health literacy"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tcad4v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_079zcw8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0szl7dh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yi9tvf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zp1aic">
+          <text>"low digital health literacy"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1uidchc">
+          <text>"CM will add the patient as the representative and communicate about any existing HRA's or upcoming telehealth visits"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1e6tjfz">
+          <text>"Patient and daughter will participate in telehealth and online assessments"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09cbb0r">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06qjjj1">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0w2crd4">
+        <inputEntry id="UnaryTests_0ida6sg">
+          <text>"B-No access to smart phone"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09276u4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18wb206">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18cz8ap">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17txhnv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ur9fv4">
+          <text>"No access to smart phone"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pt9vee">
+          <text>"CM will give patient link for truconnect, government program 'Lifeline'"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hgwecg">
+          <text>"Patient will use link given to access a new phone through the government program 'Lifeline'"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11fogu7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14pngn8">
+          <text>"https://www.truconnect.com/lifeline?gclid=EAIaIQobChMIlJzo987Z6wIVyyCtBh1wbwBfEAAYASABEgJyMfD_BwE"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08el35t">
+        <inputEntry id="UnaryTests_1t15u2y">
+          <text>"B-No access to computer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_199kd90">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bj2h5t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wvzme5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06o11zx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1amtppa">
+          <text>"No access to computer"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rqso14">
+          <text>"CM will coordinate with primary for a referral for a socail worker visit"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12gp2o8">
+          <text>"Patient will participate and cooperate with social worker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03rjelz">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ldbso1">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qtrd99">
+        <inputEntry id="UnaryTests_0fde6s6">
+          <text>"B-No phone access"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kx7w8u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rgsnm6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nwedjn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cbkk0f">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05b8ljz">
+          <text>"No phone access"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00nft9a">
+          <text>"CM will give patient link for truconnect, government program 'Lifeline'"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mduvte">
+          <text>"Patient will use link given to access a new phone through the government program 'Lifeline'"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13lm7dq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03p3gog">
+          <text>"https://www.truconnect.com/lifeline?gclid=EAIaIQobChMIlJzo987Z6wIVyyCtBh1wbwBfEAAYASABEgJyMfD_BwE"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0375ovb">
+        <inputEntry id="UnaryTests_1ef6y2k">
+          <text>"B-appointment availability to provider"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rm0yas">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nvkq0p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wuv6g4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1azecho">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0of05a1">
+          <text>"unavailbility of appointment"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16cswtm">
+          <text>"CM will attemp to arrange a visit, if unsuccessful will call PCP to redirect patient to an endocrinologist that can see the patient"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0il14vb">
+          <text>"Patient will attend appointments arranged"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ty11t5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uofm3h">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_10lhv43">
+        <inputEntry id="UnaryTests_0ux74o1">
+          <text>"B-behavioral health issues"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14k6388">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pbp2gi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00wlcxg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k1fv99">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0yds417">
+          <text>"behavioral health issues|behavioral health"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05lodq0">
+          <text>"CM will arrange a provider home visit and blood draws from a home visiting lab provider"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fc585m">
+          <text>"Patient will participate with home visiting provider and lab technician"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00c841y">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kfl4dh">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ukvg7r">
+        <inputEntry id="UnaryTests_1l6e2bx">
+          <text>"B-unable to cope"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bblazz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nbarns">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n23bik">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rslxfe">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12hok2p">
+          <text>"mental or emotional pressure|behavioral health"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1eqgw3b">
+          <text>"CM will coordinate with Primary and get a referral to a mental health provider"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pzy0da">
+          <text>"Patient will participate and will attend her appointment with a mental health provider"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01h2we5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ypabfh">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wyyicd">
+        <inputEntry id="UnaryTests_1b6m3e2">
+          <text>"B-Telehealth knowledge deficit"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08kvz7g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_146uyf6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17x8lnf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u2wm4d">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02aoxaj">
+          <text>"Telehealth knowledge deficit"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p8ocpj">
+          <text>"Patient teaching done on what telehealth is and how to access it"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wj5mtr">
+          <text>"Patient will have understanding and will participate in telehealth visits"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r8cq3n">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fuirzx">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1hv5xfq">
+        <inputEntry id="UnaryTests_0j6p9eb">
+          <text>"B-unwilling to engage in telehealth visit"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sfqw0i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0o72ncd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rw918r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08jbtah">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nzv3h8">
+          <text>"unwilling to engage in telehealth visit"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16g969a">
+          <text>"CM will coordinate with PCP for a home health nursing to assist and teach the patient how to access and set up a telehealth visit"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kdrew6">
+          <text>"Patient will participate and will be willing to learn on how to set up and receive telehealth visits"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dox5tz">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cflzr7">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03nxqcc">
+        <inputEntry id="UnaryTests_10nmor5">
+          <text>"B-Problems related to released from prison Z65.2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zyhkdp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l1vdx5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vph2w6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ri8z0b">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0o80af8">
+          <text>"Problems related to released from prison|Z65.2"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bmxhhk">
+          <text>"CM will send patient links to employment agencies near his home"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qhndel">
+          <text>"Patient will contact employment agencies to start the process of possible employment"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0juq9on">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hzqx22">
+          <text>"www.careeronestop.org, www.ceoworks.org, www.hirenetwork.org"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0pkmq5p">
+        <inputEntry id="UnaryTests_125z94r">
+          <text>"B-Problems related to psychosocial circumstances; Deprivation (effects) emotional NEC Z65.8"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g3m9tk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cu4gpa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ebzjr4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hb86y8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1muxa23">
+          <text>"emotionally deprived|Z65.8"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bfilqw">
+          <text>"CM will coordinate with PCP for a referral to a behavioral health provider"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07l05np">
+          <text>"Patient will attend appointments made with behavioral health provider"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01ldwt9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ou72qs">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zrebvt">
+        <inputEntry id="UnaryTests_1l91bk8">
+          <text>"B-Problem related to unsepcified psychosocial circumstances Z65.9"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1t5viio">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jwj1wl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v386gy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rslytg">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1q7qolq">
+          <text>"Problem related to unspecified psychosocial circumstances|Z65.9"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sajwz7">
+          <text>"CM will send the patient links to community resources that can assist with medication cost"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yelj8l">
+          <text>"Patient will use links given to obtain medications"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1snlgjq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1m0295l">
+          <text>"www.connectie.org"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11em2ne">
+        <inputEntry id="UnaryTests_04iaap9">
+          <text>"B-Imprisonment and other incarceration Z65.1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03ebyls">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15c9o2m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ab3852">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n9x2gv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0d02cwf">
+          <text>"Imprisonment and other incarceration|Z65.1"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zdcgj8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a6pbu6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11g0m5p">
+          <text>"CLOSE_CASE"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r50okx">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02e7hjo">
+        <inputEntry id="UnaryTests_10c2olh">
+          <text>"B-Exposure to disaster, was and other hostilities Z65.5"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15h27il">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kwno40">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n1jz2z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11e5z3u">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tdygqb">
+          <text>"Exposure to disaster|Z65.5"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wzget6">
+          <text>"CM will coordinate with PCP for a referal to a behavioral health provider"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0imyrju">
+          <text>"Patient will attend appointments made with behavioral health provider"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1n0eaua">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03hvsze">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_05gkqbj">
+        <inputEntry id="UnaryTests_0eyf84a">
+          <text>"B-Victim of crime and terrorism Z65.4"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tdr6h9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1d6e1c2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08z3s7q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0unpyzf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1cdj2jo">
+          <text>"Victim of crime and terrorism|Z65.4"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ygu7ej">
+          <text>"CM will coordinate with PCP for a referal to a behavioral health provider"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1aynsna">
+          <text>"Patient will attend appointments made with behavioral health provider"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mdmth7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17nyjgx">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rl9vn3">
+        <inputEntry id="UnaryTests_0mydx98">
+          <text>"B-Problems related to multiparity Z64.1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_141ay4b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16bu340">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08n7i95">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0oiurgb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a7v5q4">
+          <text>"Multiparity|Z64.1"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09p36o3">
+          <text>"CM will assist the patient with programs that will assist her such as WIC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vmar0e">
+          <text>"Patient will use all services supplied by CM"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bmnv6o">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13oksd2">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1cl3rqu">
+        <inputEntry id="UnaryTests_0vubn0f">
+          <text>"B-Discord with counsellors Z64.4"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hppgqn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06g4uwf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1va9yhx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a07k4c">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0sakbqm">
+          <text>"discord with counselor|Z64.4"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k2c185">
+          <text>"CM will assist the patient in switching to a new counselor"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02rubk3">
+          <text>"Patient will attend appointments made with his new counselor"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1boux4q">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mj0a3g">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06bc7be">
+        <inputEntry id="UnaryTests_1ow611x">
+          <text>"B-Problems related to unwanted pregnancy Z64.0"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rmgh24">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t1pkv5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0q6vam9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nmipr7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12up2te">
+          <text>"unwanted pregnancy|Z64.0"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00yb25l">
+          <text>"CM will coordinate with PCP for a social worker referral/counseling referral"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13u27ox">
+          <text>"Patient will attend appointments made with a social worker/counselor"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1no4qqk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08ep3xd">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0p56zc3">
+        <inputEntry id="UnaryTests_0r4yvh0">
+          <text>"B-Absence of family member Z63.3"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14g6tul">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1k78c61">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04ubsl8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n0b4nm">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_108c4ca">
+          <text>"Absence family member|Z63.3"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0peak0e">
+          <text>"CM will coordinate with PCP for a social worker referral/counseling referral"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ynmqiy">
+          <text>"Patient(s) will attend appointments made with a social worker/counselor"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tgufel">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1284r9h">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0w8ixh7">
+        <inputEntry id="UnaryTests_10motmn">
+          <text>"B-Dependent relative needing care at home Z63.6"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t5kns0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0otn6aw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wh80yn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rswagl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pfh15g">
+          <text>"care for family member|Z63.6"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03k0vwz">
+          <text>"CM will assist with obtaining for IHSS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0oppwrh">
+          <text>"Patient will coordinate with CM for IHSS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14a88vp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e9x1cs">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wl70b8">
+        <inputEntry id="UnaryTests_071sh9c">
+          <text>"B-inadequate family support Z63.2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tpudjh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mptprt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nzuz67">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_128e7jc">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1104jjv">
+          <text>"inadequate family support|Z63.2"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bk78vp">
+          <text>"CM will assist with obtaining for IHSS/CBAS programs"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jecak8">
+          <text>"Patient will coordinate with CM for IHSS/CBAS programs"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xcko3r">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1uj17dx">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1go2u6i">
+        <inputEntry id="UnaryTests_0cib5rb">
+          <text>"B-Problem related to primary support group, unspecified Z63.9"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nkoeum">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08ycati">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h359mh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bymzov">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1v5qfhq">
+          <text>"familial problem|Z63.9"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14kanva">
+          <text>"CM will coordinate with PCP for a social worker referral/counseling referral"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03st6yz">
+          <text>"Patient will attend appointments made with a social worker/counselor"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vo0bou">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14v9rzo">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0kqv3a4">
+        <inputEntry id="UnaryTests_16ul1uh">
+          <text>"B-Other stressful life events affecting family and household isolation Z63.7"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vm2qq4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05hdcfd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pjpff2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nm05l4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dc8tag">
+          <text>"isolation|Z63.7"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19ctxd0">
+          <text>"CM will coordinate with PCP for a social worker referral/family counseling referral"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1a88src">
+          <text>"Patient will attend appointments made with a social worker/family counselor"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_078wved">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1aejwwg">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1pfcozt">
+        <inputEntry id="UnaryTests_02nejb0">
+          <text>"B-Disappearance of death of family member Z63.4"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vblys7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07tqdpe">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wohkgn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uhztra">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rmtf7c">
+          <text>"Bereavement|Z63.4"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kvull3">
+          <text>"CM will coordinate with PCP for a social worker referral/counseling referral"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k0ahai">
+          <text>"Patient will attend appointments made with a social worker/counselor"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1knnruo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1v9tohv">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ctdi9l">
+        <inputEntry id="UnaryTests_1hwelv4">
+          <text>"B-Problems in relationshiop with spouse or partner Z63.0"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0658k15">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g73c65">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jrhvi8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00qkn2l">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1s0g8py">
+          <text>"conjugal maladjustment|Z63.0"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06kc2oe">
+          <text>"CM will coordinate with PCP for a social worker referral/counseling referral"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08cwrl0">
+          <text>"Patient will attend appointments made with a social worker/counselor"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0c2a8q8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1n2vxrg">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ceu53h">
+        <inputEntry id="UnaryTests_1s8q9c4">
+          <text>"B-Disruption of family by seperation and divorce Z63.5"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1d1kzy2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ige6ze">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1siaa8a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sppucr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kwyqok">
+          <text>"estrangement|Z63.5"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lpo10k">
+          <text>"CM will coordinate with PCP for a social worker referral/ family counseling referral"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07rvl7l">
+          <text>"Patient will attend appointments made with a social worker/family counselor"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jyx78z">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04stgf3">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_175z7pa">
+        <inputEntry id="UnaryTests_1o2wt9o">
+          <text>"B-Emotional neglect of child Z62.4"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0es0shm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wvfx35">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nfutgv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y47ji7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bfuyw3">
+          <text>"emotional neglect of child|Z62.4"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lmvz0x">
+          <text>"CM will coordinate with PCP for a social worker referral/ family counseling referral"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0liwx93">
+          <text>"Patient will attend appointments made with his a social worker/family counselor"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nnn8ih">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_084wde2">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1g2uxdw">
+        <inputEntry id="UnaryTests_04zjjb7">
+          <text>"B-Other specified problems related to neglect in upbringing Z62.8"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14l27gh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09aa06k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1auw6r8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nvjb8p">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cmurkf">
+          <text>"problems related to upbringing|Z62.8"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06ap0ut">
+          <text>"CM will coordinate with PCP for a social worker referral/counseling referral"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_077gzf8">
+          <text>"Patient will attend appointments made with a  social worker/counselor"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1js4eeq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fpstbs">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0knls7h">
+        <inputEntry id="UnaryTests_101damh">
+          <text>"B-Institutional upbringing Z62.2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cv53o7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10jm6eg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zy03bq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mxzd5s">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ugj4uv">
+          <text>"institutional upbringing|Z62.2"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hq8ybl">
+          <text>"CM will coordinate with PCP for a social worker referral/counseling referral"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1uj11v1">
+          <text>"Patient will attend appointments made with a social worker/counselor"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16covjd">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_062fght">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1aiqjfa">
+        <inputEntry id="UnaryTests_04hgsds">
+          <text>"B-Other problems related to social environment Z60.8"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0on228s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0q8rc6y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m3tevv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pla982">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1453ssw">
+          <text>"maladjustment /social|Z60.8"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pe9ezf">
+          <text>"CM will coordinate with PCP for a social worker referral/counseling referral"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bs9nvr">
+          <text>"Patient will attend appointments made with a social worker/counselor"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fqm3n3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lds9lr">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vvkxs4">
+        <inputEntry id="UnaryTests_0bbteqf">
+          <text>"B-Living alone Z60.2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xmihgn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1k24ezc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0axo08y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08ya9x9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1mboy8b">
+          <text>"problems related to living alone|Z60.2"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0llz91e">
+          <text>"CM will coordinate with PCP for a social worker referral/IHSS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_103iel6">
+          <text>"Patient will attend cooperate with social worker and assist CM with IHSS paper work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05a6v81">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0iqz4w3">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0mze18k">
+        <inputEntry id="UnaryTests_0rsht4e">
+          <text>"B-Problems of adjustment to life-cycle transitions Z60.0"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j6sb32">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17iih1v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n5d8pj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kjz03c">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_032lcbl">
+          <text>"empty nest syndrome|Z60.0"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0faszck">
+          <text>"CM will coordinate with PCP for a social worker referral"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n2yqom">
+          <text>"Patient will participate with social worker consult"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tzwv9t">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11031mj">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wj9hhp">
+        <inputEntry id="UnaryTests_004zd1m">
+          <text>"B-Problem related to social environment, unspecified Z60.9"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17c0ls7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y7ax4w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03xfacf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10wvvlr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mccdoa">
+          <text>"social maladjustment|Z60.9"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_141moom">
+          <text>"CM will coordinate with PCP for a social worker referral/counseling referral"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15w8oib">
+          <text>"Patient will attend cooperate with social worker and attend counseling"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jhq5l9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ajmv04">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0b27220">
+        <inputEntry id="UnaryTests_00cfi5e">
+          <text>"B-Target of perceived adverse descrimination and persecution Z60.5"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uz1on6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dgg8kj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yc38co">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tty5mo">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0238tu8">
+          <text>"descrimination|Z60.5"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sil6zu">
+          <text>"CM will coordinate with PCP for a social worker referral/counseling referral"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hl8zpc">
+          <text>"Patient will attend cooperate with social worker and attend counseling"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14dc31c">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rh3fnr">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1jbo3f4">
+        <inputEntry id="UnaryTests_0w3f5rt">
+          <text>"B-Social exclusion and rejection Z60.4"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vxy677">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k8ga2r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11gg0hu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1onlzd7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wornmm">
+          <text>"social exclusion|Z60.4"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wiul6o">
+          <text>"CM will coordinate with PCP for a social worker referral/counseling referral"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11m48kd">
+          <text>"Patient will attend cooperate with social worker and attend counseling"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08ar7ty">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nd6lf8">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1cp8yda">
+        <inputEntry id="UnaryTests_1o4re0v">
+          <text>"B-insufficient social insurance and welfare support Z59.7"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02m7vpj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c5z72q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b7c262">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gqt4wi">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0onjaa9">
+          <text>"inadequate social insurance|Z59.7"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0aq3sal">
+          <text>"CM will assist patient with links to acess food pantry, job training, through connect ie"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h4gsv1">
+          <text>"Patient will utilize connect ie to obtain assistance with job training, food pantry, pay utilities, medical care"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07vhqik">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0c323rd">
+          <text>"www.connectie.org"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07mj8ir">
+        <inputEntry id="UnaryTests_16k8ipo">
+          <text>"B-Lack of adequate food Z59.4"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e7oxzt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16zap00">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v5lej4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_028bnwr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_024d65x">
+          <text>"lack of adequate food|Z59.4"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vqnkhy">
+          <text>"CM will assist patient with links to acess food pantry"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vhf7j8">
+          <text>"Patient will utilize food pantry services provided by CM"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rfrlpw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_051w4nf">
+          <text>"www.connectie.org"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ihp6zk">
+        <inputEntry id="UnaryTests_1fik5yk">
+          <text>"B-Problems related to housing and economic circumstances Z59.9"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1k49gdu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vd5v1c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06re46p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07pz6dr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1v3h9p6">
+          <text>"problems related to economic|Z59.9"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sqx23s">
+          <text>"CM will assist patient with links to acess food pantry"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x5e7qe">
+          <text>"Patient will utilize food pantry services provided by CM"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1f2xt8d">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sud7wy">
+          <text>"www.connectie.org"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1m0h1pn">
+        <inputEntry id="UnaryTests_1of0xqk">
+          <text>"B-Low income Z59.6"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ggwg4x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12qwwgo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hl6typ">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01gmevr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vmtfbw">
+          <text>"low income|Z59.6"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r6gjnp">
+          <text>"CM will coordinate with PCP for a social worker referral/links to food pantry"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1viko7y">
+          <text>"Patient will attend cooperate with social worker and use links to food pantry provided by CM"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cxulmo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qclvn6">
+          <text>"www.connectie.org"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1762kth">
+        <inputEntry id="UnaryTests_0gpvfse">
+          <text>"B-Extreme poverty Z59.5"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_159h9hn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f7tuyx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1euhqdd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xu27j0">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nc5m4u">
+          <text>"extremem poverty|Z59.5"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_165ipwz">
+          <text>"CM will coordinate with PCP for a social worker referral/links to food pantry"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xwwqof">
+          <text>"Patient will attend cooperate with social worker and use links to food pantry provided by CM"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_064d00s">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10fgoxj">
+          <text>"www.connectie.org"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1v7i0j7">
+        <inputEntry id="UnaryTests_0i4ujsc">
+          <text>"B-Inadequate housing Z59.1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10k37wu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10du88z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uvt4k3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bmytlp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wfcwxr">
+          <text>"inadequate housing|Z59.1"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fi1k1o">
+          <text>"CM will coordinate with PCP for a social worker referral/links to food pantry"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0b4g8lr">
+          <text>"Patient will attend cooperate with social worker and use links to food pantry provided by CM"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1n46sz1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d3qq92">
+          <text>"www.connectie.org"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_146e2at">
+        <inputEntry id="UnaryTests_1d8kmyp">
+          <text>"B-Homelessness Z59.0"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f3upau">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1enyehv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15d7f19">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qjlzlh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1k1i9f4">
+          <text>"homelessness|Z59.0"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ngest8">
+          <text>"CM will assist patient in finding a shleter and also connect him with a food pantry and a social worker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14o5txd">
+          <text>"Patient will attend cooperate with social worker and use links to food pantry"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_096gbte">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hhcr4l">
+          <text>"www.connectie.org"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1l28vh9">
+        <inputEntry id="UnaryTests_1nkr7s0">
+          <text>"B-Occupational exposure to noise Z57.0"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1renuix">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jat6ow">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0skjamg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07krg8t">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lf5gzz">
+          <text>"occupational noise exposure|Z57.0"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ctabcv">
+          <text>"CM will coordinate with PCP on generating a referral to an ENT"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p8qpvx">
+          <text>"Patient will attend ENT consult to get a hearing evaluation"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0i4zkjf">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_106fqyo">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0k6cyqe">
+        <inputEntry id="UnaryTests_0b9y4gb">
+          <text>"B-Occupational exposure to radiation Z57.1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bafh0s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r9rdde">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dj3xfh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dwv8fc">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nti40k">
+          <text>"occupational exposure to radiation|Z57.1"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kxdia7">
+          <text>"CM will coordinate with PCP for a referral to counseling services"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1umibg7">
+          <text>"Patient will attend counseling appointment"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1o4808g">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0g2cia5">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xpuhi5">
+        <inputEntry id="UnaryTests_1y29g1m">
+          <text>"B-Other physical and mental strain related to work Z56.6"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fk1b2r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jioaj3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fjvnmc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09ok5v4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0an9vts">
+          <text>"strain work-related|Z56.6"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0k2l5hp">
+          <text>"CM will coordinate with PCP for a referral to counseling services"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ly4ifd">
+          <text>"Patient will attend counseling appointment"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ycuoeb">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bqrpol">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15wl9my">
+        <inputEntry id="UnaryTests_059gd83">
+          <text>"B-Unemployment unspecified Z56.0"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fmyqb9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0iim23g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hslkxv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19mh67k">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0w7tjo3">
+          <text>"problem with unemployment|Z56.0"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rbzbk5">
+          <text>"CM will coordinate with PCP for a social worker referral/links to food pantry"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gm30x6">
+          <text>"Patient will attend cooperate with social worker and use links to food pantry provided by CM"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rznxi4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18a3nwi">
+          <text>"www.connectie.org"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1es0ig6">
+        <inputEntry id="UnaryTests_1820s43">
+          <text>"B-lliteracy and low-level literacy Z55.0"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0o7ga37">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pvnjbv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00a8v0e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w6jkev">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0owyhxv">
+          <text>"lliteracy|Z55.0"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rnw2wf">
+          <text>"CM will give patient links that can help with attending school and obtain a diploma"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lumog6">
+          <text>"Patient will use links provided to return to school"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17j58u0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16h12iy">
+          <text>"www.connectie.org"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ifvjjg">
+        <inputEntry id="UnaryTests_1uqd07p">
+          <text>"B-Other programs related to education and literacy Z55.8"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ws7gh5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08nbrml">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12op8dx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q7efm6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ccy0oh">
+          <text>"educational handicap|Z55.8"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vm4ewo">
+          <text>"CM will give patient links that can help with attending school and obtain a diploma"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gdhwef">
+          <text>"Patient will use links provided to return to school"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fv0kr9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gzcnvx">
+          <text>"www.connectie.org"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="barrier" name="Barrier" />
+  <inputData id="condition" name="Condition" />
+  <inputData id="maritalstatus" name="Marital Status" />
+  <inputData id="gender" name="Gender" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0bkih0m">
+      <dmndi:DMNShape id="DMNShape_03pdf3g" dmnElementRef="nlpbarriers">
+        <dc:Bounds height="80" width="180" x="380" y="150" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0yvp9um" dmnElementRef="barrier">
+        <dc:Bounds height="45" width="125" x="257" y="358" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_01corfa" dmnElementRef="InformationRequirement_1bowpsn">
+        <di:waypoint x="320" y="358" />
+        <di:waypoint x="416" y="250" />
+        <di:waypoint x="416" y="230" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0glsoff" dmnElementRef="condition">
+        <dc:Bounds height="45" width="125" x="307" y="447" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1klpt4f" dmnElementRef="InformationRequirement_02tavsp">
+        <di:waypoint x="370" y="447" />
+        <di:waypoint x="452" y="250" />
+        <di:waypoint x="452" y="230" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1j545mx" dmnElementRef="maritalstatus">
+        <dc:Bounds height="45" width="125" x="557" y="358" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1ig8bru" dmnElementRef="InformationRequirement_1tzo96m">
+        <di:waypoint x="620" y="358" />
+        <di:waypoint x="524" y="250" />
+        <di:waypoint x="524" y="230" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1hf6spz" dmnElementRef="gender">
+        <dc:Bounds height="45" width="125" x="461" y="447" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1mzuzch" dmnElementRef="InformationRequirement_0bafkr9">
+        <di:waypoint x="524" y="447" />
+        <di:waypoint x="488" y="250" />
+        <di:waypoint x="488" y="230" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

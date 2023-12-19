@@ -1,0 +1,48 @@
+,Category,Barriers,Problems,CM Intervention,Patient Intervention
+0,Physical Imapirment,N/A,N/A,N/A,
+1,Language,N/A,N/A,N/A,N/A
+2,Advanced Directives,N/A,N/A,,
+3,Release of Information (ROI),N/A,N/A,N/A,N/A
+4,Healthcare Provider,N/A,N/A,N/A,N/A
+5,Safety,Living Alone,N/A,N/A,N/A
+6,Safety,N/A,N/A,N/A,N/A
+7,Overall Health,N/A,N/A,N/A,
+8,Medication,N/A,N/A,N/A,N/A
+9,Medication,N/A,N/A,N/A,N/A
+10,Emergency Room,In appropriate use of emergency room,N/A,"Educate patient the difference between ER vs. Urgent Care, and send a list of Urgent Care facilities in the area.",Patient will verbalize understanding of use of ER vs. Urgent Care and read list of Urgent Care facilities in area.
+11,Hospital Admission,At risk for readmission,N/A,"CM to look for gaps in care, such as, patient needing oxygen, home health, pain management, etc.",Patient must follow up with CM/PCP to mitigate gaps in care.
+12,Oral Health,N/A,N/A,N/A,N/A
+13,Oral Health,Non Compliance,N/A,CM to follow up on doctor and alert patient for apt reminder.,Patient will go to scheduled doctor's appointment.
+14,Sleep,Altered sleep patterns,N/A,"Create task for CM for benefit check and facilitate dental appointment. Also, will prompt CM to complete oral assessment (OHRA).","Patient must follow up on benefit check, and complete oral assessment (OHRA) with CM."
+15,Sleep,Poor oral health,N/A,"Create task for CM for benefit check and facilitate dental appointment. Also, will prompt CM to complete oral assessment (OHRA).","Patient must follow up on benefit check, and complete oral assessment (OHRA) with CM."
+16,Cardiovascular,Cardiovascular barrier,N/A,CM will complete cardiovascular assessment.,Patient will complete cardiovascular assessment with CM.
+17,Blood Sugar (Endocrine),N/A,N/A,N/A,N/A
+18,Pulmonary,Pulmonary barrier,N/A,CM will complete pulmonary assessment.,Patient will complete pulmonary assessment with CM.
+19,Gastrointestinal,N/A,N/A,N/A,N/A
+20,Renal,N/A,N/A,N/A,N/A
+21,Integumentary,N/A,N/A,N/A,N/A
+22,Pain Assessment,Pain,N/A,N/A,N/A
+23,Sensory Ability,N/A,N/A,N/A,N/A
+24,Sensory Ability,N/A,N/A,N/A,N/A
+25,Assistance,N/A,N/A,N/A,N/A
+26,Assistance,N/A,N/A,N/A,N/A
+27,Assistance,N/A,N/A,N/A,N/A
+28,Assistance,N/A,N/A,N/A,N/A
+29,Assistance,N/A,N/A,N/A,N/A
+30,Assistance,N/A,N/A,N/A,N/A
+31,Ambulation Status,Sedentary lifestyle,N/A,CM will coordinate with PCP and generate a referral for an outpatient physical and occupational therapy.,Patient will participate in physical and occupational therapy program.
+32,Ambulation Status,N/A,N/A,N/A,N/A
+33,Physical Activity,Sedentary lifestyle,N/A,CM will coordinate with PCP and generate a referral for a outpatient physical and occupational therapy.,Patient will participate in physical and occupational therapy program.
+34,Tobacco & Alcohol Use,N/A,N/A,N/A,N/A
+35,Tobacco & Alcohol Use,N/A,N/A,N/A,N/A
+36,Tobacco & Alcohol Use,N/A,N/A,N/A,N/A
+37,Mental Health,N/A,N/A,N/A,N/A
+38,Mental Health Depression - PHQ9,Depression,N/A,CM will coordinate with PCP and generate a referral for a home visiting social worker/mental health provider.,Patient will participate with social worker or assist an outpatient mental health treatment.
+39,Employment,N/A,N/A,N/A,N/A
+40,Child Care,N/A,N/A,N/A,N/A
+41,Education,N/A,N/A,N/A,N/A
+42,Financial,N/A,N/A,N/A,N/A
+43,Financial,N/A,N/A,N/A,N/A
+44,Financial,N/A,N/A,N/A,N/A
+45,Support,Lack of resources,N/A,CM will check patient's transportation benefits and coordinate available community services which the patient can participate in.,Patient will use transportation and participate in community programs such as CBAS.
+46,Home Safety,N/A,N/A,N/A,N/A

@@ -1,0 +1,314 @@
+,Category,Q#,Question,Questions Type,Answer Options,Answer Score,Problem,Alert,Task,Intervention
+General Health Data (17 - 25 Questions),Physical Impairment,1,Do you need someone to help you complete this survey?,Single,"1-Yes 
+2-No","Yes = 1
+ No = 0",Physical Impairment,Caregiver,1 = Yes/Contact caregiver,
+,,1 (a),If yes. Why do you need help? (Select all that apply),Multiple,"1-Hard of Hearing
+ 2-Vision Impaired
+ 3-Problems with Memory
+ 4-I have a Guardian","One problem = 1
+ Two or more = 2",,,,
+,Caregiver,1 (b),If I have a guardian. Who is your guardian and what is their phone number?,Text,FILL IN,No Score Informational,,,,
+,Lanuage,2,What language do you prefer to speak?,Single,"1-English
+ 2-Spanish
+ 3-Chinese
+ 4-Tagalog
+ 5-Vietnamese
+ 6-Other - FILL IN",No Score Informational,,,,
+,,3,What language do you prefer to get written health information in?,Single,"1-English
+ 2-Spanish
+ 3-Chinese
+ 4-Tagalog
+ 5-Vietnamese
+ 6-Other - FILL IN",No Score Informational,,,,
+,Advanced Directives,4,Do you have an advanced Directive for health care? (This is a document that tells doctors and hospitals what to do in case your are not able to speak for yourself.),Single,"1-Yes 
+2-No",,,,,
+,,4 (a),If Yes. Can you provid a copy to your care manager?,Single,"1-Yes 
+ 2-No",,,,,
+,,4 (b),If No. Would you like to talk with someone about getting an advance directive?,Single,"1-Yes 
+ 2-No",,,,,
+,Release of Information (ROI),5,Can we talk to your support person or caregiver about your health if we cannot reach you or if there is an emergency?,Single,"1-Yes 
+ 2-No",No Score Informational,,,,
+,,5 (a),If yes. Please write the name and phone number of the person you would like for us to contact.,Text,FILL IN,No Score Informational,,,,
+,Culture & Religion,6,Do you have any cultural or religious beliefs that impact your healthcare decisions?,Single,"1-Yes 
+ 2-No",No Score Informational,,,,
+,,6 (a),If yes. Please list any cultural or religious beliefs that impact your healthcare decisions?,Text,FILL IN,No Score Informational,,,,
+,Healthcare Provider,7,When was the last time you saw your doctor (Primary Care Provider)?,Single,"1-This Month
+ 2-Three Months Ago
+ 3-Six Months Ago
+ 4-Over a Year Ago",,,,,
+,,8,Do you see a healthcare provider other than your primary care doctor?,Single,"1-Yes 
+ 2-No",,,,,
+,,8 (a),If yes. Please list other providers names.,Text,FILL IN,No Score Informational,,,,
+,Safety,9,What is your living situation? I live,Single,"1-Alone
+ 2-With someone
+ 3-In a facility
+ 4-I don't have a place to live
+ 5-Other - FILL IN",,,,,
+,,10,Does your home have working smoke alarms?,Single,"1-Yes 
+ 2-No",,,,,
+,,11,Do you always fasten your seat belt when you are in a car?,Single,"1-Yes 
+ 2-No",,,,,
+,Overall Health,12,How is your overall health?,Single,"1-Excellent
+2-Very Good 
+3- Good
+4-Fair
+5-Poor",,,,,
+,Height,13,What is your height (without shoes)?,Text,FILL IN,No Score Informational,,,,
+,Weight,14,What is your weight?,Text,FILL IN,No Score Informational,,,,
+,Medication,15,How many different prescriptions are you taking?,Single,"1 - None
+2 - 1-5
+3 - 5-10
+4 - 10+",,,,,
+,,15 (a),If greater than 0. Do you take your prescriptions as prescribed?,Single,"1-Yes
+2-No
+3-Sometimes",,,,,
+,Emergency Room,16,How many times in the last 6 months have you been to the emergency room?,Single,"1 - 0
+2 - 1-2
+3 - 3-4
+4 - 5+",,,,,
+,Hospital Admission,17,How many times in the last 6 months were you admitted to the hospital?,Single,"1 - 0
+2 - 1-2
+3 - 3-4
+4 - 5+",,,,,
+Health Assessment (11 - 19 Questions),Oral Health,18,How is the health of your mouth?,Single,"1-Excellent
+2-Very Good 
+3- Good
+4-Fair
+5-Poor",,,,,
+,,19,Do you have a dentist that you visit regularly (at least once a year)?,Single,"1-Yes 
+2-No",,,,,
+,Sleep,20,How many hours of sleep do you usually get each night?,Single,"1 - 0-3
+2 - 4-7
+3 - 8+",,,,,
+,,21,Do you snore or has anyone told you that you snore?,Single,"1-Yes 
+2-No",,,,,
+,Cardiovascular,22,Have you ever been told you have a heart or vascular problem (including high blood pressure)?,Single,"1-Yes 
+2-No",,,,,
+,,22 (a),If yes. What was your blood pressure the last time it was checked?,Text or Single,"FILL IN, I don't remember",No Score Informational,,,,
+,,22 (b),If yes. What was your cholesterol the last time it was checked?,Text or Single,"FILL IN, I don't remember",No Score Informational,,,,
+,Blood Sugar (Endocrine),23,Have you ever been told you have high blood sugar?,Single,"1-Yes 
+2-No",,,,,
+,,23 (a),If yes. What was your blood sugar the last time it was checked?,Text or Single,"FILL IN, I don't remember",No Score Informational,,,,
+,,23 (b),If yes. What was your A1c the last time it was checked?,Text or Single,"FILL IN, I don't remember",No Score Informational,,,,
+,Pulmonary,24,Have you every been told that you have a problem with your lungs?,Single,"1-Yes 
+2-No",,,,,
+,Gatrointestinal,25,Have you ever been told you have a problem with your stomach or intestines? (Do you have diffculty having a bowl movement?),Single,"1-Yes 
+2-No",,,,,
+,Renal,26,Have you ever been told you have a problem with your kidneys or urinary system? (Do you have trouble urinating?),Single,"1-Yes 
+2-No",,,,,
+,Integumentary,27,Have you ever been told you have a problem with your skin? (Do you have any sores or wounds?),Single,"1-Yes 
+2-No",,,,,
+,Pain Assessment,28,"In the past 7, days have you felt pain?",Single,"1-Yes  
+2-No",,,,,
+,,28 (a),"If yes. In the past 7 days, how often have you felt pain?",Single,"1-Sometimes
+2-Often
+3-Always",,,,,
+,,28 (b),If yes. Where is the pain? (Select all the apply),Multiple,"1-Head/Neck
+2-Chest
+3-Abdomen
+4-Back
+5-Arms
+6-Legs
+7-Other - FILL IN",,,,,
+,,28 (c),If yes. Rate your pain on a scale of 0-10 (with 0 being no pain and 10 being the worst pain).,Single,"1 - 0
+2 - 1-3
+3 - 4-6
+4 - 7-9 
+5 - 10 ",,,,,
+,,28 (d),If yes. How do you treat the pain? (Select all the apply),Multiple,"1-No Treatment
+2-Rest
+3-Heat/Ice 
+4-Therapy
+5-Medication
+6-Other - FILL IN",,,,,
+Functional Health (11-19 Questions),Sensory Ability,29,Do you have any problems with vision? (Select all that apply),Multiple,"1-None
+2-Eyeglasses
+3-Contacts 
+4-Other - FILL IN",,,,,
+,,30,Do you have any problems with hearing?,Single,"1-None
+2-Hearing Aids
+3-Other - FILL IN",,,,,
+,Assistance,31,"Do you need help when seeing your healthcare providers (transportation, caregiver assistance, interpreter services)?",Single,"1-Yes 
+2-No",,,,,
+,,31 (a),If yes. Please select the help you need? (Select all that apply),Multiple,"1-Transportation
+2-Caregiver Assistance
+3-Interpreter Services
+4-Other - FILL IN",,,,,
+,,31 (b),If yes. Do you put off or neglect going to the doctor or picking up your prescription(s) because of the distance or transportation?,Single,"1-Yes 
+2-No",,,,,
+,,32,Do you use any durable medical equipment (DME)?,Single,"1-Yes 
+2-No",,,,,
+,,32 (a),"If yes, What kind of medical items or supplies do you have? (Select all that apply)",Multiple,"1-Cane
+2-Walker
+3-Wheelchair
+4-Hospital Bed
+4-Portable Toilet
+5-Oxygen
+6-Other - FILL IN",,,,,
+,,33,Do you receive any in home assistance?,Single,"1-Yes 
+2-No",,,,,
+,,33 (a),If yes. What in home services do you receive?,Text,FILL IN,No Score Informational,,,,
+,,33 (b),If no. Do you need any in home services?,Single,"1-Yes 
+2-No",,,,,
+,,33 (c),If yes. What in home services do you feel you need. (Select all the apply),Multiple,"1-Transportation
+ 2-Caregiver Assistance
+ 3-Other - FILL IN",,,,,
+,Ambulation Status,34,How minutes can you walk or move around?,Single,"1 - 0-15
+2 - 15-30
+3 - 30-60
+4 - 60+",,,,,
+,,35,Do you have trouble with your balance?,Single,"1-Yes 
+2-No",,,,,
+,,36,Have you fallen in the last 6 months?,Single,"1-Yes 
+2-No",,,,,
+,Physical Activity,37,"In the past 7 days, how many days did you exercise?",Single,"1 - 0 
+2 - 1-2 
+3 - 3-4
+4 - 5+",,,,,
+,,37 (a),"If greater than 0. On days when you exercised, for how long did you exercise (in minutes)?",Single,"1 - 0-15
+2 - 15-30
+3 - 30-60
+4 - 60+",,,,,
+,,37 (b),If greater than 0. How intense was your typical exercise?,Single,"1-Light (stretching or slow walking)
+2-Moderate (brisk walking)
+3-Heavy (jogging or swimming)
+4-Very Heavy (running or climbing stairs)",,,,,
+,Functional Status Assessment-Instrumental Activities of Daily Living (IADL),38,"In the past 7 days, did you need help from others to take care of things such as laundry and housekeeping, banking, shopping, using the telephone, food preparation, transportation, or taking your own medications?",Single,"1-Yes 
+2-No",,,,,
+,,39,"In the past 7 days, did you need help from others to perform everyday activities such as eating, getting dressed, grooming, bathing, walking, or using the toilet?",Single,"1-Yes 
+2-No",,,,,
+Behavioral (22-28 Questions),Nutrition,40,"In the past 7 days, how many servings of fruits and vegetables did you typically eat each day? (1 serving = 1 cup of fresh vegetables, ½ cup of cooked vegetables, or 1 medium piece of fruit. 1 cup = size of a baseball.)",Single,"1 - 0
+2 - 1-2 
+3 - 3-4
+4 - 5+",,,,,
+,,41,"In the past 7 days, how many servings of high fiber or whole grain foods did you typically eat each day? (1 serving = 1 slice of 100% whole wheat bread, 1 cup of whole-grain or high-fiber ready-to-eat cereal, ½ cup of cooked cereal such as oatmeal, or ½ cup of cooked brown rice or whole wheat pasta.)",Single,"1 - 0
+2 - 1-2 
+3 - 3-4
+4 - 5+",,,,,
+,,42,"In the past 7 days, how many servings of of meat, fish, poultry, dry beans or nuts, or other proteins did you typically eat each day? (1 serving = 3 oz. cooked lean meat, poultry or fish, 2 egg whites or 1 egg, ¼ cup cooked beans, 1 tbsp. peanut butter, ½ oz. unsalted nuts/seeds.)",Single,"1 - 0
+2 - 1-2 
+3 - 3-4
+4 - 5+",,,,,
+,,43,"In the past 7 days, how many servings of fried or high-fat foods did you typically eat each day? (Examples include fried chicken, fried fish, bacon, French fries, potato chips, corn chips, doughnuts, creamy salad dressings, and foods made with whole milk, cream, cheese, or mayonnaise.)",Single,"1 - 0
+2 - 1-2 
+3 - 3-4
+4 - 5+",,,,,
+,,44,"In the past 7 days, how many sugar-sweetened (not diet) beverages did you typically consume each day?",Single,"1 - 0
+2 - 1-2 
+3 - 3-4
+4 - 5+",,,,,
+,Tobacco & Alcohol use,45,Do you use any tobacco products (including smokeless tobacco)?,Single,"1-Yes 
+2-No",,,,,
+,,45 (a),If yes. Are you interested in quitting tobacco?,Single,"1-Yes 
+2-No",,,,,
+,,46,Do you consume alcoholic beverages?,Single,"1-Yes 
+2-No",,,,,
+,,46 (a),"If yes. In the past 7 days, how many days have you drank alcohol?",Single,"1 - 0
+2 - 1-2 
+3 - 3-4
+4 - 5+",,,,,
+,,46 (b),If yes. How many times in the past year have you had four or more alcoholic drinks in a day?,Single,"1 - 0
+2 - 1-2 
+3 - 3-4
+4 - 5+",,,,,
+,,46 (c),If yes. Are you interested in receiving help for your alcohol consumption?,Single,"1-Yes 
+ 2-No",,,,,
+,,46 (d),"If yes. Do you ever drive after drinking, or ride with a driver who has been drinking?",Single,"1-Yes
+2-No
+3-Sometimes",,,,,
+,Substance Abuse,47,Do you use any other substances not prescribed to you by a healthcare provider (including marijuana)?,Single,"1-Yes 
+ 2-No",,,,,
+,,47 (a),If yes. Are you interested in receiving help for substance abuse?,Single,"1-Yes 
+ 2-No",,,,,
+,Mental Health,48,"If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?",Single,"1-Not difficult at all
+2-Somewhat difficult
+3-Very difficult
+4-Extremly difficult",,,,,
+,,49,Have your feelings caused you distress or interfered with your ability to get along socially with family or friends?,Single,"1-Yes 
+2-No",,,,,
+,,50,"How often is stress a problem for you in handling such things as (your health, your finances, your family or social relationships, or your work)?",Single,"1-Never
+2-Rarely
+3-Sometimes
+4-Often
+5-Always",,,,,
+,,51,"In the past 2 weeks, how often have you felt nervous, anxious, or on edge?",Single,"0-Not at all
++1-Several days
++2-More than half the days
++3-Nearly everyday",,,,,
+,,52,"In the past 2 weeks, how often were you not able to stop worrying or control your worrying?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,,
+,Mental Health Depression (PHQ-9),53,"(PHQ9) In the past 2 weeks, how often have you felt down, depressed, or hopeless?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,,
+,,54,"(PHQ9) In the past 2 weeks, how often have you felt little interest or pleasure in doing things?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,,
+,,55,"(PHQ9) In the past 2 weeks, how often have you had trouble falling or staying asleep, or been sleeping too much?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,,
+,,56,"(PHQ9) In the past 2 weeks, how often have you felt tired or had little energy?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,,
+,,57,"(PHQ9) In the past 2 weeks, how often have you had a poor appetite or overate?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,,
+,,58,"(PHQ9) In the past 2 weeks, how often have you felt bad about yourself – or that you are a failure or have let yourself or your family down?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,,
+,,59,"(PHQ9) In the past 2 weeks, how often have you had trouble concentrating on things, such as reading the newspaper or watching television?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,,
+,,60,"(PHQ9) In the past 2 weeks, how often have you noticed moving or speaking so slowly that other people could have noticed? Or the opposite – being so fidgety or restless that you have been moving around a lot more than usual?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,,
+,,61,"(PHQ9) In the past 2 weeks, how often have you had thoughts that you would be better off dead or of hurting yourself in some way?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,,
+Socioeconomics (10 Questions),Employment,62,Do you have a job?,Single,"1-Yes 
+2-No",,,,,
+,Child Care,63,Do problems getting child care make it difficut for you to work or study?,Single,"1-Yes 
+2-No",,,,,
+,Education,64,What is your highest level of education?,Single,"1-Grade School
+ 2-High School Diploma
+ 3-Some College
+ 4-College Degree",,,,,
+,Finacial,65,"In the past 12 months, have you worried that your food would run out before you had money to buy more?",Single,"1-Yes 
+2-No",,,,,
+,,66,"In the past 12 months, has your food run out before you had money to get more?",Single,"1-Yes 
+2-No",,,,,
+,,67,"In the past 12 months, has the electricity , gas , or water company threatened to shut off services in your home?",Single,"1-Yes 
+2-No",,,,,
+,,68,How often does this describe you? I don’t have enough money to pay my bills?,,"1-Never
+2-Rarely
+3-Sometimes
+4-Often
+5-Always",,,,,
+,,69,Are you worried or concerned that in the next two months you may not have stable housing?,Single,"1-Yes 
+2-No",,,,,
+,Support,70,How often do you get the social and emotional support you need?,Single,"1-Never
+2-Rarely
+3-Sometimes
+4-Often
+5-Always",,,,,
+,Home Safety,71,Do you feel safe at home?,Single,"1-Yes 
+2-No",,,,,
+Engagement (4-5 Questions),Patient Engagement,72,"Is there a specific health, or any other type of problem(s) you would like to address first?",Single,"1-Yes 
+2-No",,,,,
+,,72 (a),If yes. Please list problem you would like to address first.,Text,FILL IN,No Score Informational,,,,
+,,73,"Are you, and/or your caregiver, willing to be part of ICT meetings? (An Interdisciplinary Care Team (ICT) is a team of individulas that work with you to help you meet your healthcare goals.)",Single,"1-Yes 
+2-No",,,,,
+,,74,Have you attended or received any educational classes/materials that focus on managing your health?,Single,"1-Yes 
+2-No",,,,,
+,,75,Do you want to receive any educational classes/materials that focus on managing your health?,Single,"1-Yes 
+2-No",,,,,

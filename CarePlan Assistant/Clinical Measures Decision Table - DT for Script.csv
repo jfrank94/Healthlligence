@@ -1,0 +1,39 @@
+Clinical_Measures,Unit,Min_Value,Max_Value,Min_Value_Systolic,Max_Value_Systolic,Min_Value_Diastolic,Max_Value_Diastolic,Risk_Level,Decision_Recommended,Decision_Type,Base_Statement
+Blood Sugar (BS),mg/dL,0,55,N/A,N/A,N/A,N/A,Critical Low,Call 911 **Note: Customize this for patient's medical history,Patient Action,
+Blood Sugar (BS),mg/dL,55,70,N/A,N/A,N/A,N/A,Low BS (Hypoglycemia),Take 1 - 4 glucose tablets,Patient Action,THEN Wait 15 minutes and check BS again IF (BS >= 70 mg/dl) => Done ELSE Eat next meal again in 1 hour
+Blood Sugar (BS),mg/dL,55,70,N/A,N/A,N/A,N/A,Low BS (Hypoglycemia),Drink 4 ounces of OJ/regular soda,Patient Action,THEN Wait 15 minutes and check BS again IF (BS >= 70 mg/dl) => Done ELSE Eat next meal again in 1 hour
+Blood Sugar (BS),mg/dL,55,70,N/A,N/A,N/A,N/A,Low BS (Hypoglycemia),Eat 4 pieces of raw candy,Patient Action,THEN Wait 15 minutes and check BS again IF (BS >= 70 mg/dl) => Done ELSE Eat next meal again in 1 hour
+Blood Sugar (BS),mg/dL,70,130,N/A,N/A,N/A,N/A,Normal BS,No action needed,None,
+Blood Sugar (BS),mg/dL,130,180,N/A,N/A,N/A,N/A,High BS (Hyperglycemia),(Administer A1C test every 2-3 months) AND (Check patient's BP < 140/90 mm Hg),CM Intervention,
+Blood Sugar (BS),mg/dL,130,180,N/A,N/A,N/A,N/A,High BS (Hyperglycemia),Increase physical activity,Patient Action,
+Blood Sugar (BS),mg/dL,130,180,N/A,N/A,N/A,N/A,High BS (Hyperglycemia),Take medicine as prescribed,Patient Action,
+Blood Sugar (BS),mg/dL,130,180,N/A,N/A,N/A,N/A,High BS (Hyperglycemia),Follow diabetes meal plan,Patient Action,
+Blood Sugar (BS),mg/dL,130,180,N/A,N/A,N/A,N/A,High BS (Hyperglycemia),Check your blood sugar as directed by your doctor,Patient Action,
+Blood Sugar (BS),mg/dL,130,180,N/A,N/A,N/A,N/A,High BS (Hyperglycemia),Consult doctor about insulin dosage,Patient Action,
+Blood Sugar (BS),mg/dL,180,9999,N/A,N/A,N/A,N/A,Critical High,Call 911 **Note: Customize this for patient's medical history,Patient Action,
+Blood Pressure (BP),mm Hg,N/A,N/A,0,60,0,90,Critical Low,Call 911 **Note: Customize this for patient's medical history,Patient Action,
+Blood Pressure (BP),mm Hg,N/A,N/A,60,90,0,60,Low BP (Hypotension),"(Identify cause)
+IF (Medicine)
+(Check medicine dosages)
+ELSE IF NOT (Medicine)
+(Prescribe medicine)
+ELSE (Assign treatment)",CM Intervention,
+Blood Pressure (BP),mm Hg,N/A,N/A,60,90,0,60,Low BP (Hypotension),Wear compression stockings,Patient Action,
+Blood Pressure (BP),mm Hg,N/A,N/A,60,90,0,60,Low BP (Hypotension),(Drink more water) AND (Eating smaller and frequent meals) AND (Raising head off of bed),Patient Action,
+Blood Pressure (BP),mm Hg,N/A,N/A,60,90,0,60,Low BP (Hypotension),Seek medical intervention,Patient Action,
+Blood Pressure (BP),mm Hg,N/A,N/A,90,140,60,90,Normal BP,No action needed,None,
+Blood Pressure (BP),mm Hg,N/A,N/A,140,180,90,120,High BP (Hypertension),Exercise regularly,Patient Action,
+Blood Pressure (BP),mm Hg,N/A,N/A,140,180,90,120,High BP (Hypertension),Stop smoking,Patient Action,
+Blood Pressure (BP),mm Hg,N/A,N/A,140,180,90,120,High BP (Hypertension),Cut back on alcohol and soda,Patient Action,
+Blood Pressure (BP),mm Hg,N/A,N/A,140,180,90,120,High BP (Hypertension),Lose weight if overweight,Patient Action,
+Blood Pressure (BP),mm Hg,N/A,N/A,140,180,90,120,High BP (Hypertension),Seek medical intervention,Patient Action,
+Blood Pressure (BP),mm Hg,N/A,N/A,180,9999,120,9999,Critical High,Call 911 **Note: Customize this for patient's medical history,Patient Action,
+Resting Heart Rate (RHR),BPM,0,50,N/A,N/A,N/A,N/A,Critical Low,Call 911 **Note: Customize this for patient's medical history,Patient Action,
+Resting Heart Rate (RHR),BPM,50,60,N/A,N/A,N/A,N/A,Low RHR (Bradycardia),Check electrolyte imabalance,Patient Action,IF NOT (Athlete) OR (Regular exerciser)
+Resting Heart Rate (RHR),BPM,50,60,N/A,N/A,N/A,N/A,Low RHR (Bradycardia),Seek medical intervention,Patient Action,IF NOT (Athlete) OR (Regular exerciser)
+Resting Heart Rate (RHR),BPM,60,100,N/A,N/A,N/A,N/A,Normal RHR,No action needed,None,
+Resting Heart Rate (RHR),BPM,100,120,N/A,N/A,N/A,N/A,High RHR (Tachycardia),Check electrolyte imbalance,Patient Action,
+Resting Heart Rate (RHR),BPM,100,120,N/A,N/A,N/A,N/A,High RHR (Tachycardia),Cut down on caffeine and alcohol consumption,Patient Action,
+Resting Heart Rate (RHR),BPM,100,120,N/A,N/A,N/A,N/A,High RHR (Tachycardia),Manage stress,Patient Action,
+Resting Heart Rate (RHR),BPM,100,120,N/A,N/A,N/A,N/A,High RHR (Tachycardia),Seek medical intervention,Patient Action,
+Resting Heart Rate (RHR),BPM,120,9999,N/A,N/A,N/A,N/A,Critical High,Call 911 **Note: Customize this for patient's medical history,Patient Action,

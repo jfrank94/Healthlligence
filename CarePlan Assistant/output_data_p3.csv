@@ -1,0 +1,47 @@
+,Category,Barriers,Problems,CM Intervention,Patient Intervention
+0,Physical Imapirment,N/A,N/A,N/A,N/A
+1,Language,N/A,N/A,N/A,N/A
+2,Advanced Directives,N/A,N/A,,
+3,Release of Information (ROI),N/A,N/A,Set preferred contact person.,Patient must share contact information with CM.
+4,Healthcare Provider,N/A,N/A,N/A,N/A
+5,Safety,Living Alone,N/A,N/A,N/A
+6,Safety,Safety barrier,N/A,CM will program care assistant to send an alert to patient to educate patient about this safety issue.,System will alert patient links to assistance programs and educational information
+7,Overall Health,N/A,N/A,N/A,N/A
+8,Medication,N/A,N/A,N/A,N/A
+9,Medication,NC Medication,N/A,CM will send patient educational materials in regards to medication regimen importance.,Patient will be complaint with their primary doctor's treatment plan.
+10,Emergency Room,N/A,N/A,N/A,N/A
+11,Hospital Admission,N/A,N/A,N/A,N/A
+12,Oral Health,N/A,N/A,N/A,N/A
+13,Oral Health,Non Compliance,N/A,CM to follow up on doctor and alert patient for apt reminder.,Patient will go to scheduled doctor's appointment.
+14,Sleep,Altered sleep patterns,N/A,N/A,
+15,Cardiovascular,N/A,N/A,N/A,N/A
+16,Blood Sugar (Endocrine),N/A,N/A,N/A,N/A
+17,Pulmonary,N/A,N/A,N/A,N/A
+18,Gastrointestinal,Gastrointestinal barrier,N/A,CM will complete gastrointestinal assessment.,Patient will complete gastrointestinal assessment with CM.
+19,Renal,N/A,N/A,N/A,N/A
+20,Integumentary,N/A,N/A,N/A,N/A
+21,Pain Assessment,N/A,N/A,N/A,N/A
+22,Sensory Ability,N/A,N/A,N/A,N/A
+23,Sensory Ability,N/A,N/A,N/A,N/A
+24,Assistance,N/A,N/A,N/A,N/A
+25,Assistance,N/A,N/A,N/A,N/A
+26,Assistance,N/A,N/A,N/A,N/A
+27,Assistance,N/A,N/A,N/A,N/A
+28,Assistance,N/A,N/A,N/A,N/A
+29,Assistance,N/A,N/A,N/A,N/A
+30,Ambulation Status,N/A,N/A,N/A,N/A
+31,Ambulation Status,N/A,N/A,N/A,N/A
+32,Physical Activity,N/A,N/A,N/A,N/A
+33,Tobacco & Alcohol Use,N/A,N/A,N/A,N/A
+34,Tobacco & Alcohol Use,N/A,N/A,N/A,N/A
+35,Tobacco & Alcohol Use,N/A,N/A,N/A,N/A
+36,Mental Health,N/A,N/A,N/A,N/A
+37,Mental Health Depression - PHQ9,N/A,N/A,N/A,N/A
+38,Employment,N/A,N/A,N/A,N/A
+39,Child Care,Dependent relative needing care at home Z63.6,N/A,CM will assist with obtaining IHSS.,Patient will coordinate with CM for IHSS.
+40,Education,N/A,N/A,N/A,N/A
+41,Financial,Low income Z59.6,N/A,CM will coordinate with PCP for a social worker referral/links to food pantry.,Patient will attend cooperate with social worker and use links to food pantry provided by CM.
+42,Financial,Problems related to housing and economic circumstances Z59.9,N/A,CM will coordinate with PCP for a social worker referral/links to food pantry.,Patient will attend cooperate with social worker and use links to food pantry provided by CM.
+43,Financial,Inadequate housing Z59.1,N/A,CM will coordinate with PCP for a social worker referral/links to food pantry.,Patient will attend cooperate with social worker and use links to food pantry provided by CM.
+44,Support,N/A,N/A,N/A,N/A
+45,Home Safety,N/A,N/A,N/A,N/A

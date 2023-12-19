@@ -1,0 +1,327 @@
+Category,Q#,Question,Questions Type,Answer Options,Decision Rule,CM Interventions,Patient Actions,Extra Notes
+Physical Impairment,1,Do you need someone to help you complete this survey?,Single,"1-Yes 
+2-No",,,,
+,1 (a),If yes. Why do you need help? (Select all that apply),Multiple,"1-Hard of Hearing
+ 2-Vision Impaired
+ 3-Problems with Memory
+ 4-I have a Guardian","IF ((Q1 == Yes) && (Q1(a) == Hard of Hearing)) THEN 'B - Hearing Disorder'
+IF ((Q1 == Yes) && (Q1(a) ==  Vision Impaired)) THEN 'B - Vision Disorder'
+IF ((Q1 == Yes) && (Q1(a) == Problem with Memory)) THEN 'B - Memory Disorder'","IF ((Q1 == Yes) && ('B - Hearing Disorder')) THEN 'Voice line should TTY supported'
+IF ((Q1 == Yes) && ('B - Vision Disorder')) THEN 'Send an alert to CM to confirm support from family or caregiver'
+IF ((Q1 == Yes) && ('B - Hearing Disorder') && ('B - Vision Disorder')) THEN 'Send alert to CM to see if member has used vision/hearing aid benefit'
+IF ((Q1 == Yes) && ('B - Memory Disorder')) THEN 'Create an alert to CM for follow-up to gather more information. CM notes which will be evaluated for further intervention'",IF ('B - Hearing Disorder') OR ('B - Vision Disorder') OR ('B - Memory Disorder') THEN 'Patient will use equipment approved by health plan',
+Caregiver,1 (b),If I have a guardian. Who is your guardian and what is their phone number?,Text,FILL IN,IF ((Q1 == Yes) && (Q1(a) == I have a guardian)) THEN 'B - Guardian',,,
+Lanuage,2,What language do you prefer to speak?,Single,"1-English
+ 2-Spanish
+ 3-Chinese
+ 4-Tagalog
+ 5-Vietnamese
+ 6-Other - FILL IN",IF ((Q1 == Yes) AND (Q5 != English)) THEN 'B - Language',"IF ('B - Language') && (!'Other - FILL IN') THEN 'Raise a task for translator service'
+IF ('B - Language') && ('Other - FILL IN') THEN 'Create an alert for further followup'",IF ('B - Language') THEN 'Patient will use interpreter services arrange by her care manager for her next doctors visit',
+,3,What language do you prefer to get written health information in?,Single,"1-English
+ 2-Spanish
+ 3-Chinese
+ 4-Tagalog
+ 5-Vietnamese
+ 6-Other - FILL IN",,"IF ('B - Language') && (!'Other - FILL IN') THEN 'Raise a task for translator service'
+IF ('B - Language') && ('Other - FILL IN') THEN 'Create an alert for further followup'",IF ('B - Language') THEN 'Patient will use interpreter services arrange by her care manager for her next doctors visit',
+Advanced Directives,4,Do you have an advanced Directive for health care? (This is a document that tells doctors and hospitals what to do in case your are not able to speak for yourself.),Single,"1-Yes 
+2-No",IF (Q4 == Yes) THEN 'B - Lack of communication' (TBD),,,
+,4 (a),If Yes. Can you provid a copy to your care manager?,Single,"1-Yes 
+ 2-No",,,,
+,4 (b),If No. Would you like to talk with someone about getting an advance directive?,Single,"1-Yes 
+ 2-No",,IF (Q4(b) == YES) THEN 'Create task for CM to talk to PCP about giving the patient an advance directive assist in scheduling an appointment.',IF (Q4(b) == YES) THEN 'Patient will follow up with appointment.',
+Release of Information (ROI),5,Can we talk to your support person or caregiver about your health if we cannot reach you or if there is an emergency?,Single,"1-Yes 
+ 2-No",IF ((Q1 == Yes) && (Q5 == No)) THEN 'B - Lack of caregiver' ,IF (Q5 == YES) THEN 'Set preferred contact person',IF (Q5 == YES) THEN 'Patient must share contact information with CM.',
+,5 (a),If yes. Please write the name and phone number of the person you would like for us to contact.,Text,FILL IN,,,,
+Culture & Religion,6,Do you have any cultural or religious beliefs that impact your healthcare decisions?,Single,"1-Yes 
+ 2-No",IF (Q6 == Yes) THEN 'B - Cultural/Religious Barriers Z60.3',IF ('B - Cultural/Religious Barriers Z60.3') THEN 'Raise an alert for CM to follow up.',IF ('B - Cultural/Religious Barriers Z60.3') THEN 'Patient must share information about cultural/religious beliefs with CM.',
+,6 (a),If yes. Please list any cultural or religious beliefs that impact your healthcare decisions?,Text,FILL IN,,,,
+Healthcare Provider,7,When was the last time you saw your doctor (Primary Care Provider)?,Single,"1-This Month
+ 2-Three Months Ago
+ 3-Six Months Ago
+ 4-Over a Year Ago",IF (Q7 == Over a Year Ago) THEN 'B - Non Compliance',IF ('B - Non Compliance') && ('Predefined Conditions' == TRUE) THEN 'CM to follow up with doctor and alert patient for apt reminder.',IF ('B - Non Compliance') THEN 'Patient will go to scheduled doctor's appointment.',
+,8,Do you see a healthcare provider other than your primary care doctor?,Single,"1-Yes 
+ 2-No",,,,
+,8 (a),If yes. Please list other providers names.,Text,FILL IN,,,,
+Safety,9,What is your living situation? I live,Single,"1-Alone
+ 2-With someone
+ 3-In a facility
+ 4-I don't have a place to live
+ 5-Other - FILL IN","IF (Q9 == Alone) THEN 'B - Living Alone'
+IF (Q9 == I don't have a place to live) THEN 'B - Homelessness Z59.0'",IF ('B - Homelessness Z59.0') THEN 'CM will coordinate with social worker for referral to shelters/links to food pantry' ,IF ('B - Homelessness Z59.0') THEN 'Patient will cooperate with social worker and use links to food pantry provided by CM',
+,10,Does your home have working smoke alarms?,Single,"1-Yes 
+ 2-No",IF (Q10 == No) THEN 'B - Safety barrier',IF ('B - Safety barrier') THEN 'CM will program care assistant to send an alert to patient to educate patient about this safety issue',IF ('B - Safety barrier') THEN 'System will alert patient links to assistance programs and educational information',
+,11,Do you always fasten your seat belt when you are in a car?,Single,"1-Yes 
+ 2-No",IF (Q11 == No) THEN 'B - Safety barrier',IF ('B - Safety barrier') THEN 'CM will program care assistant to send an alert to patient to educate patient about this safety issue',IF ('B - Safety barrier') THEN 'System will alert patient links to assistance programs and educational information',
+Overall Health,12,How is your overall health?,Single,"1-Excellent
+2-Very Good 
+3- Good
+4-Fair
+5-Poor",IF ((Q12 == Excellent) OR (Q12 == Poor)) && ('B - Knowledge deficit') THEN 'P - Patient does not understand disease process' ,IF ((Q12 == Excellent) OR (Q12 == Poor)) && ('B - Knowledge deficit') THEN 'CM to create an alert for patient for possible education on this condition',IF ('B - Knowledge deficit') THEN 'Patient will read all educational materials and links provided',
+Height,13,What is your height (without shoes)?,Text,FILL IN,,,,
+Weight,14,What is your weight?,Text,FILL IN,,,,
+Medication,15,How many different prescriptions are you taking?,Single,"1 - None
+2 - 1-5
+3 - 5-10
+4 - 10+",IF (Q15 == 10+) THEN 'B - Polypharmacy' ,IF ('B - Polypharmacy') THEN 'CM will coordinate with PCP for a home health nurse to do a medication reconciliation and visit',IF ('B - Polypharmacy') THEN 'Patient will participate and work with nurse and pharmacy on reconciliation',
+,15 (a),If greater than 0. Do you take your prescriptions as prescribed?,Single,"1-Yes
+2-No
+3-Sometimes",IF ((Q15 != None) && (Q15(a) == No) OR (Q15(a) == Sometimes)) THEN 'B - NC medication',IF ('B - NC medication') THEN 'CM will send patient educational materials in regards to medication regimen importance',IF ('B - NC Medication') THEN 'Patient will be complaint with their primary doctor's treatment plan',
+Emergency Room,16,How many times in the last 6 months have you been to the emergency room?,Single,"1 - 0
+2 - 1-2
+3 - 3-4
+4 - 5+",IF ((Q16 == 3-4) || (Q16 == 5+)) THEN 'B - Inappropriate use of emergency room',"IF ('B - Inappropriate use of emergency room') THEN 'Educate patient the difference between ER vs. Urgent Care, and send a list of Urgent Care facilities in the area.' ",IF ('B - Inappropriate use of emergency room') THEN 'Patient will verbalize understanding of use of ER vs. Urgent Care and read list of Urgent Care facilities in area.',**NEW BARRIER**Can be tied to claims. 
+Hospital Admission,17,How many times in the last 6 months were you admitted to the hospital?,Single,"1 - 0
+2 - 1-2
+3 - 3-4
+4 - 5+",IF ((Q17 == 3-4) || (Q17 == 5+)) THEN 'B - At risk for readmission',"IF ('B - At risk of re-admission') THEN 'CM to look for gaps in care, such as, patient needing oxygen, home health, pain management, etc.'",IF ('B - At risk of re-admission') THEN 'Patient must follow up with CM/PCP to mitigate gaps in care.',**NEW BARRIRER**Hospitals can lose money.
+Oral Health,18,How is the health of your mouth?,Single,"1-Excellent
+2-Very Good 
+3- Good
+4-Fair
+5-Poor",IF (Q18 == Poor) THEN 'B - Poor oral health',"IF ('B - Poor oral health') THEN 'Create task for CM for benefit check and facilitate dental appointment. Also, will prompt CM to complete oral assessment (OHRA).'","IF ('B - Poor oral health') THEN 'Patient must follow up on benefit check, and complete oral assessment (OHRA) with CM.'",**NEW BARRIER**
+,19,Do you have a dentist that you visit regularly (at least once a year)?,Single,"1-Yes 
+2-No",IF (Q19 == No) THEN 'B - Non Compliance',IF ('B - Non Compliance') THEN 'CM to follow up on doctor and alert patient for apt reminder.',IF ('B - Non Compliance') THEN 'Patient will go to scheduled doctor's appointment.',
+Sleep,20,How many hours of sleep do you usually get each night?,Single,"1 - 0-3
+2 - 4-7
+3 - 8+",B - Altered sleep patterns',,,"**NOTE: For any answer, there would need to be a re-evaluation through a sleep assessment. "
+,21,Do you snore or has anyone told you that you snore?,Single,"1-Yes 
+2-No",IF (Q21 == No) THEN 'B - Poor oral health',"IF ('B - Altered sleep patterns') && ('B - Poor oral health') THEN 'Send task to CM, patient may need sleep study to fill out, and referral may need to be generated or tasked to prior authorization. Also, will prompt CM to complete oral assessment (OHRA).'",IF ('B - Altered sleep patterns') && ('B - Poor oral health') 'Patient must participate in sleep study if authorization is approved by referral and complete oral assessment (OHRA) with CM.',**NOTE: Possible mishapen epiglottis as the reason.
+Cardiovascular,22,Have you ever been told you have a heart or vascular problem (including high blood pressure)?,Single,"1-Yes 
+2-No",IF (Q22 == Yes) THEN 'B - Cardiovascular barrier',IF ('B - Cardiovascular barrier') THEN 'CM will complete cardiovascular assessment.',IF ('B - Cardiovascular barrier') THEN 'Patient will complete cardiovascular assessment with CM.',**NEW BARRIER**Keeping it broad for now. 
+,22 (a),If yes. What was your blood pressure the last time it was checked?,Text or Single,"FILL IN, I don't remember",,,,
+,22 (b),If yes. What was your cholesterol the last time it was checked?,Text or Single,"FILL IN, I don't remember",,,,
+Blood Sugar (Endocrine),23,Have you ever been told you have high blood sugar?,Single,"1-Yes 
+2-No",IF (Q23 == Yes) THEN 'B - Blood sugar barrier',IF ('B - Blood sugar barrier') THEN 'CM will complete cardiovascular assessment.',IF ('B - Blood sugar barrier') THEN 'Patient will complete blood sugar assessment with CM.',**NEW BARRIER**Keeping it broad for now.
+,23 (a),If yes. What was your blood sugar the last time it was checked?,Text or Single,"FILL IN, I don't remember",,,,
+,23 (b),If yes. What was your A1c the last time it was checked?,Text or Single,"FILL IN, I don't remember",,,,
+Pulmonary,24,Have you every been told that you have a problem with your lungs?,Single,"1-Yes 
+2-No",IF (Q24 == Yes) THEN 'B - Pulmonary barrier',IF ('B - Pulmonary barrier') THEN 'CM will complete cardiovascular assessment.',IF ('B - Pulmonary barrier') THEN 'Patient will complete pulmonary assessment with CM.',**NEW BARRIER**Keeping it broad for now. 
+Gatrointestinal,25,Have you ever been told you have a problem with your stomach or intestines? (Do you have diffculty having a bowl movement?),Single,"1-Yes 
+2-No",IF (Q25 == Yes) THEN 'B - Gastrointestinal barrier',IF ('B - Gastrointestinal barrier') THEN 'CM will complete gastrointestinal assessment.',IF ('B - Gastrointestinal barrier') THEN 'Patient will complete gastrointestinal assessment with CM.',**NEW BARRIER**Keeping it broad for now.
+Renal,26,Have you ever been told you have a problem with your kidneys or urinary system? (Do you have trouble urinating?),Single,"1-Yes 
+2-No",IF (Q26 == Yes) THEN 'B - Renal barrier',IF ('B - Renal barrier') THEN 'CM will complete renal assessment.',IF ('B - Renal barrier') THEN 'Patient will complete renal assessment with CM.',**NEW BARRIER**Keeping it broad for now.
+Integumentary,27,Have you ever been told you have a problem with your skin? (Do you have any sores or wounds?),Single,"1-Yes 
+2-No",IF (Q27 == Yes) THEN 'B - Integumentary barrier',IF ('B - Integumentary barrier') THEN 'CM will complete integumentary assessment.',IF ('B - Integumentary barrier') THEN 'Patient will complete integumentary assessment with CM.',**NEW BARRIER**Keeping it broad for now.
+Pain Assessment,28,"In the past 7, days have you felt pain?",Single,"1-Yes  
+2-No",IF (Q28 == Yes) THEN 'B - Pain',,,
+,28 (a),"If yes. In the past 7 days, how often have you felt pain?",Single,"1-Sometimes
+2-Often
+3-Always",,,,
+,28 (b),If yes. Where is the pain? (Select all the apply),Multiple,"1-Head/Neck
+2-Chest
+3-Abdomen
+4-Back
+5-Arms
+6-Legs
+7-Other - FILL IN",,,,
+,28 (c),If yes. Rate your pain on a scale of 0-10 (with 0 being no pain and 10 being the worst pain).,Single,"1 - 0
+2 - 1-3
+3 - 4-6
+4 - 7-9 
+5 - 10 ",,,,
+,28 (d),If yes. How do you treat the pain? (Select all the apply),Multiple,"1-No Treatment
+2-Rest
+3-Heat/Ice 
+4-Therapy
+5-Medication
+6-Other - FILL IN",,IF (('B - pain') && ((Q28(c) == 7-9) OR (Q28(c) == 10)) && (Q28(d) == 1)) THEN 'CM consult PCP or referral for pain management',IF (('B - pain') && ((Q28(c) == 7-9) OR (Q28(c) == 10)) && (Q28(d) == 1)) THEN 'Patient will follow up with PCP/referral for pain management treatment.',
+Sensory Ability,29,Do you have any problems with vision? (Select all that apply),Multiple,"1-None
+2-Eyeglasses
+3-Contacts 
+4-Other - FILL IN",IF ((Q1 == Yes) && (Q1(a) ==  Vision Impaired) && (Q29 != None)) THEN 'B - Vision Disorder',IF ('B - Vision Disorder') THEN 'Send task to CM to check benefit for obtaining glasses/contacts or an appointment for the optomologist.',IF ('B - Vision Disorder') THEN 'Patient will obtain prescribed glasses/contacts or follow up with optomologist appointment.',
+,30,Do you have any problems with hearing?,Single,"1-None
+2-Hearing Aids
+3-Other - FILL IN",IF (Q30 != None) THEN 'B - Auditory disorder',IF ('B - Auditory Disorder') THEN 'Send task to CM to check benefits for possible assistance from ENT or obtaining hearing test and aids.',IF ('B - Auditory Disorder') THEN 'Patient will obtain hearing test and aids or follow up with ENT consultation.',
+Assistance,31,"Do you need help when seeing your healthcare providers (transportation, caregiver assistance, interpreter services)?",Single,"1-Yes 
+2-No",IF (Q31 == Yes) THEN 'B - Lack of availability of services' ,"IF ('B - Lack of availability of services') THEN 'CM to assist in providing patient a closer provider to where they live, and CM will complete transportation coordination assessment.'",IF ('B - Lack of availability of services') THEN 'Patient to attend appointment to new provider and will complete transportation coordination assessment with CM.',
+,31 (a),If yes. Please select the help you need? (Select all that apply),Multiple,"1-Transportation
+2-Caregiver Assistance
+3-Interpreter Services
+4-Other - FILL IN",,,,
+,31 (b),If yes. Do you put off or neglect going to the doctor or picking up your prescription(s) because of the distance or transportation?,Single,"1-Yes 
+2-No","IF (Q31(b) == Yes) THEN ['B - NC medication', 'B - No transportation']","IF ('B - No transportation') THEN 'CM will check patient's transportation beenfit and set up transportation for the patient's appointments.'
+IF ('B - NC medication') THEN 'CM will send patient educational materials in regards to medication regimen importance.'","IF ('B - No transportation') THEN 'Patient will attend their appointments and use transportation arranged by their CM.'
+IF ('B - NC medication') THEN 'Patient will be compliant with medication regimen.'",
+,32,Do you use any durable medical equipment (DME)?,Single,"1-Yes 
+2-No",IF ((Q31 == Yes) && (Q31(a) == Caregiver Assistance) && (Q32 == No)) THEN 'B - No DME',IF ('B - No DME') THEN 'CM will coordinate with PCP and generate a referral for DME needed.',IF ('B - No DME') THEN 'Patient will use new DME for ambulation and self-care.',**Question: Must it be necessarily a FWW? 
+,32 (a),"If yes, What kind of medical items or supplies do you have? (Select all that apply)",Multiple,"1-Cane
+2-Walker
+3-Wheelchair
+4-Hospital Bed
+4-Portable Toilet
+5-Oxygen
+6-Other - FILL IN",,,,**NOTE: Future barrier can be created for each DME. 
+,33,Do you receive any in home assistance?,Single,"1-Yes 
+2-No",IF ((Q31 == Yes) && (Q33 == No)) THEN 'B - No caregiver',IF ('B - No caregiver') THEN 'CM will assist the patient in getting IHSS if the patient meets for these services.',IF ('B - No caregiver') THEN 'Patient will work with their CM to possibly get IHSS.',**NOTE: IHSS = In home social services
+,33 (a),If yes. What in home services do you receive?,Text,FILL IN,,,,
+,33 (b),If no. Do you need any in home services?,Single,"1-Yes 
+2-No",IF ((Q31 == Yes) && (Q33(b) == No)) THEN 'B - Lack of availability of services',,,
+,33 (c),If yes. What in home services do you feel you need. (Select all the apply),Multiple,"1-Transportation
+ 2-Caregiver Assistance
+ 3-Other - FILL IN",,"IF ((Q33(c) == Transportation) && ('B - Lack of availability of services')) THEN 'CM to assist in providing patient a closer provider to where they live or providing transportation to closest provider.'
+IF ((Q33(c) == Caregiver Assistance) && ('B - Lack of availability of services')) THEN 'CM will assist the patient in getting IHSS if the patient meets for these services.'
+IF ((Q33(c) == Other - FILL IN) && ('B - Lack of availability of services')) THEN 'CM will identify other needs.'","IF ((Q33(c) == Transportation) && ('B - Lack of availability of services')) THEN 'Patient to attend appointment to new provider with possible transportation provided.'
+IF ((Q33(c) == Caregiver Assistance) && ('B - Lack of availability of services')) THEN 'Patient will work with her CM to possibly get IHSS.'",
+Ambulation Status,34,How minutes can you walk or move around?,Single,"1 - 0-15
+2 - 15-30
+3 - 30-60
+4 - 60+",IF ((Q34 == 0 - 15) && (Q31 == No)) THEN 'B - Sedentary lifestyle',IF ('B - Sedentary lifestyle') THEN 'CM will coordinate with PCP and generate a referral for an outpatient physical and occupational therapy.',IF ('B - Sedentary lifestyle') THEN 'Patient will participate in physical and occupational therapy program.',
+,35,Do you have trouble with your balance?,Single,"1-Yes 
+2-No",IF (Q35 == Yes) THEN 'B - Fall risk' ,,,**NEW BARRIER**
+,36,Have you fallen in the last 6 months?,Single,"1-Yes 
+2-No",IF (Q36 == Yes) THEN 'B - Fall risk' ,IF ((Q36 == YES) && ('B - Fall risk')) THEN 'CM will complete fall risk assessment.',IF ((Q36 == YES) && ('B - Fall risk')) THEN 'Patient will complete fall risk assessment with CM.',**NEW BARRIER**
+Physical Activity,37,"In the past 7 days, how many days did you exercise?",Single,"1 - 0 
+2 - 1-2 
+3 - 3-4
+4 - 5+",IF ((Q37 == 0) && (Q31 == No)) THEN 'B - Sedentary lifestyle',IF ('B - Sedentary lifestyle') THEN 'CM will coordinate with PCP and generate a referral for a outpatient physical and occupational therapy.',IF ('B - Sedentary lifestyle') THEN 'Patient will participate in physical and occupational therapy program.',
+,37 (a),"If greater than 0. On days when you exercised, for how long did you exercise (in minutes)?",Single,"1 - 0-15
+2 - 15-30
+3 - 30-60
+4 - 60+",,,,
+,37 (b),If greater than 0. How intense was your typical exercise?,Single,"1-Light (stretching or slow walking)
+2-Moderate (brisk walking)
+3-Heavy (jogging or swimming)
+4-Very Heavy (running or climbing stairs)",,,,
+Functional Status Assessment-Instrumental Activities of Daily Living (IADL),38,"In the past 7 days, did you need help from others to take care of things such as laundry and housekeeping, banking, shopping, using the telephone, food preparation, transportation, or taking your own medications?",Single,"1-Yes 
+2-No",IF ((Q31(a) == Caregiver Assistance) && (Q38 == Yes)) THEN 'B - no caregiver',IF ('B - No caregiver') THEN 'CM will assist the patient in getting IHSS if the patient meets for these services.',IF ('B - No caregiver') THEN 'Patient will work with their CM to possibly get IHSS.',
+,39,"In the past 7 days, did you need help from others to perform everyday activities such as eating, getting dressed, grooming, bathing, walking, or using the toilet?",Single,"1-Yes 
+2-No",IF ((Q31(a) == Caregiver Assistance) && (Q39 == Yes)) THEN 'B - no caregiver',IF ('B - No caregiver') THEN 'CM will assist the patient in getting IHSS if the patient meets for these services.',IF ('B - No caregiver') THEN 'Patient will work with their CM to possibly get IHSS.',
+Nutrition,40,"In the past 7 days, how many servings of fruits and vegetables did you typically eat each day? (1 serving = 1 cup of fresh vegetables, ½ cup of cooked vegetables, or 1 medium piece of fruit. 1 cup = size of a baseball.)",Single,"1 - 0
+2 - 1-2 
+3 - 3-4
+4 - 5+",,,,
+,41,"In the past 7 days, how many servings of high fiber or whole grain foods did you typically eat each day? (1 serving = 1 slice of 100% whole wheat bread, 1 cup of whole-grain or high-fiber ready-to-eat cereal, ½ cup of cooked cereal such as oatmeal, or ½ cup of cooked brown rice or whole wheat pasta.)",Single,"1 - 0
+2 - 1-2 
+3 - 3-4
+4 - 5+",,,,
+,42,"In the past 7 days, how many servings of of meat, fish, poultry, dry beans or nuts, or other proteins did you typically eat each day? (1 serving = 3 oz. cooked lean meat, poultry or fish, 2 egg whites or 1 egg, ¼ cup cooked beans, 1 tbsp. peanut butter, ½ oz. unsalted nuts/seeds.)",Single,"1 - 0
+2 - 1-2 
+3 - 3-4
+4 - 5+",,,,
+,43,"In the past 7 days, how many servings of fried or high-fat foods did you typically eat each day? (Examples include fried chicken, fried fish, bacon, French fries, potato chips, corn chips, doughnuts, creamy salad dressings, and foods made with whole milk, cream, cheese, or mayonnaise.)",Single,"1 - 0
+2 - 1-2 
+3 - 3-4
+4 - 5+",,,,
+,44,"In the past 7 days, how many sugar-sweetened (not diet) beverages did you typically consume each day?",Single,"1 - 0
+2 - 1-2 
+3 - 3-4
+4 - 5+",,,,
+Tobacco & Alcohol use,45,Do you use any tobacco products (including smokeless tobacco)?,Single,"1-Yes 
+2-No",,,,
+,45 (a),If yes. Are you interested in quitting tobacco?,Single,"1-Yes 
+2-No",IF (Q45 == Yes && Q45(a) == No) THEN 'B - tobacco use',IF ('B - tobacco use') THEN 'CM will send patient educational pamphlets on the effects of tobacco. May also set up an appointment with PCP for an advance directive.',IF ('B - tobacco use') THEN 'Patient will read educational materials received about smoking and its effects. May need to follow up appointment for any advance directive.',
+,46,Do you consume alcoholic beverages?,Single,"1-Yes 
+2-No",,,,
+,46 (a),"If yes. In the past 7 days, how many days have you drank alcohol?",Single,"1 - 0
+2 - 1-2 
+3 - 3-4
+4 - 5+",,,,
+,46 (b),If yes. How many times in the past year have you had four or more alcoholic drinks in a day?,Single,"1 - 0
+2 - 1-2 
+3 - 3-4
+4 - 5+",,,,
+,46 (c),If yes. Are you interested in receiving help for your alcohol consumption?,Single,"1-Yes 
+ 2-No",IF ((Q46 == Yes) && (Q46(a) == 3-4 || Q46(a) == 5+) && (Q46(b) == 3-4 || Q46(b) == 5+) && (Q46(c) == Yes) ||  (Q46(c) == No)) THEN 'B - Alcohol use',IF ('B - Alcohol use') THEN 'CM will assist patient in finding a program to quit drinking such as a local AA group near the patient's home.',IF ('B - Alcohol use') THEN 'Patient will participate in a program to quit drinking.',
+,46 (d),"If yes. Do you ever drive after drinking, or ride with a driver who has been drinking?",Single,"1-Yes
+2-No
+3-Sometimes",IF ((Q46 == Yes) && (Q46(d) == Yes || Q46(d) == Sometimes)) THEN 'B - Safety barrier',IF ('B - Safety barrier') THEN 'CM will program care assistant to send an alert to patient to educate patient about this safety issue',IF ('B - Safety barrier') THEN 'System will alert patient links to assistance programs and educational information.',
+Substance Abuse,47,Do you use any other substances not prescribed to you by a healthcare provider (including marijuana)?,Single,"1-Yes 
+ 2-No",,,,
+,47 (a),If yes. Are you interested in receiving help for substance abuse?,Single,"1-Yes 
+ 2-No",IF (Q47 == Yes && Q47(a) == No) THEN 'B - Substance abuse',IF ('B - Substance abuse') THEN 'CM will assist patient in finding a program to quit drinking such as a local support group near the patient's home.',IF ('B - Substance abuse') THEN 'Patient will participate in a program to quit substance abuse.',
+Mental Health,48,"If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?",Single,"1-Not difficult at all
+2-Somewhat difficult
+3-Very difficult
+4-Extremly difficult",IF (Q48 == Very difficult) || (Q48 == Extremely difficult) THEN 'B - Ineffective coping.',,,**NEW BARRIER**
+,49,Have your feelings caused you distress or interfered with your ability to get along socially with family or friends?,Single,"1-Yes 
+2-No",IF (Q48 == Very difficult) || (Q48 == Extremely difficult) THEN 'B - Ineffective coping.',,,**NEW BARRIER**
+,50,"How often is stress a problem for you in handling such things as (your health, your finances, your family or social relationships, or your work)?",Single,"1-Never
+2-Rarely
+3-Sometimes
+4-Often
+5-Always",IF (Q48 == Very difficult) || (Q48 == Extremely difficult) THEN 'B - Ineffective coping.',,,**NEW BARRIER**
+,51,"In the past 2 weeks, how often have you felt nervous, anxious, or on edge?",Single,"0-Not at all
+1-Several days
+2-More than half the days
+3-Nearly everyday",IF (Q48 == Very difficult) || (Q48 == Extremely difficult) THEN 'B - Ineffective coping.',,,"**NOTE: PHQ-4 Questions, lead into answering PHQ-9 questions"
+,52,"In the past 2 weeks, how often were you not able to stop worrying or control your worrying?",Single,"0-Not at all
+1-Several days
+2-More than half the days
+3-Nearly everyday",IF (Q48 == Very difficult) || (Q48 == Extremely difficult) THEN 'B - Ineffective coping.',IF ((Q48 - Q52 == More than half the days) || (Q48 - Q52 == Nearly everyday)) THEN 'CM send a task to social worker or behavioral health specialist.',IF ((Q48 - Q52 == More than half the days) || (Q48 - Q52 == Nearly everyday)) THEN 'Patient should follow up with social worker or behavioral health specialist.',"**NOTE: PHQ-4 Questions, lead into answering PHQ-9 questions"
+Mental Health Depression (PHQ-9),53,"(PHQ9) In the past 2 weeks, how often have you felt down, depressed, or hopeless?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,**NOTE: PHQ-2/4/9 Questions
+,54,"(PHQ9) In the past 2 weeks, how often have you felt little interest or pleasure in doing things?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,**NOTE: PHQ-2/4/9 Questions
+,55,"(PHQ9) In the past 2 weeks, how often have you had trouble falling or staying asleep, or been sleeping too much?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,
+,56,"(PHQ9) In the past 2 weeks, how often have you felt tired or had little energy?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,
+,57,"(PHQ9) In the past 2 weeks, how often have you had a poor appetite or overate?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,
+,58,"(PHQ9) In the past 2 weeks, how often have you felt bad about yourself – or that you are a failure or have let yourself or your family down?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,
+,59,"(PHQ9) In the past 2 weeks, how often have you had trouble concentrating on things, such as reading the newspaper or watching television?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,
+,60,"(PHQ9) In the past 2 weeks, how often have you noticed moving or speaking so slowly that other people could have noticed? Or the opposite – being so fidgety or restless that you have been moving around a lot more than usual?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",,,,
+,61,"(PHQ9) In the past 2 weeks, how often have you had thoughts that you would be better off dead or of hurting yourself in some way?",Single,"0-Not at all
+ +1-Several days
+ +2-More than half the days
+ +3-Nearly everyday",IF (Q53 + Q54 + Q55 + Q56 + Q57 + Q58 + Q59 + Q60 + Q61) > 10 THEN 'B - Depression',IF ('B - Depression') THEN 'CM will coordinate with PCP and generate a referral for a home visiting social worker/mental health provider.',IF ('B - Depression') THEN 'Patient will participate with social worker or assist an outpatient mental health treatment.',https://www.hiv.uw.edu/page/mental-health-screening/phq-9
+Employment,62,Do you have a job?,Single,"1-Yes 
+2-No",IF (Q62 == No) THEN 'B - Unemployment unspecified Z56.0',IF ('B - Unemployment unspecified Z56.0') THEN 'CM will coordinate with PCP for a social worker referral/links to food pantry.',IF ('B - Unemployment unspecified Z56.0') THEN 'Patient will attend cooperate with social worker and use links to food pantry provided by CM.',
+Child Care,63,Do problems getting child care make it difficut for you to work or study?,Single,"1-Yes 
+2-No",IF (Q63 == Yes) THEN 'B - Dependent relative needing care at home Z63.6',IF ('B - Dependent relative needing care at home Z63.6') THEN 'CM will assist with obtaining IHSS.',IF ('B - Dependent relative needing care at home Z63.6') THEN 'Patient will coordinate with CM for IHSS.',
+Education,64,What is your highest level of education?,Single,"1-Grade School
+ 2-High School Diploma
+ 3-Some College
+ 4-College Degree",IF (Q64 == Grade School) THEN 'B - Other problems related to education or literacy Z55.8',IF ('B - Other problems related to education or literacy Z55.8') THEN 'CM will give patient links that can help with attending school.',IF ('B - Other problems related to education or literacy Z55.8') THEN 'Patient will use resources provided.',
+Finacial,65,"In the past 12 months, have you worried that your food would run out before you had money to buy more?",Single,"1-Yes 
+2-No",,,,
+,66,"In the past 12 months, has your food run out before you had money to get more?",Single,"1-Yes 
+2-No",,,,
+,67,"In the past 12 months, has the electricity , gas , or water company threatened to shut off services in your home?",Single,"1-Yes 
+2-No",,,,
+,68,How often does this describe you? I don’t have enough money to pay my bills?,,"1-Never
+2-Rarely
+3-Sometimes
+4-Often
+5-Always",IF ((Q65 == Yes) && (Q66 == Yes) && (Q67 == Yes) && (Q68 == Often) || (Q68 == Always)) THEN 'B - Low income Z59.6',IF ('B - Low income Z59.6') THEN 'CM will coordinate with PCP for a social worker referral/links to food pantry.',IF ('B - Low income Z59.6') THEN 'Patient will attend cooperate with social worker and use links to food pantry provided by CM.',
+,69,Are you worried or concerned that in the next two months you may not have stable housing?,Single,"1-Yes 
+2-No","IF (Q69 == Yes) THEN ['B - Problems related to housing and economic circumstances Z59.9', 'B - Inadequate housing Z59.1']","IF ('B - Problems related to housing and economic circumstances Z59.9') THEN 'CM will coordinate with PCP for a social worker referral/links to food pantry.'
+IF ('B - Inadequate housing Z59.1') THEN 'CM will coordinate with PCP for a social worker referral/links to food pantry.'","IF ('B - Problems related to housing and economic circumstances Z59.9') THEN 'Patient will attend cooperate with social worker and use links to food pantry provided by CM.'
+IF ('B - Inadequate housing Z59.1') THEN 'Patient will attend cooperate with social worker and use links to food pantry provided by CM.'",
+Support,70,How often do you get the social and emotional support you need?,Single,"1-Never
+2-Rarely
+3-Sometimes
+4-Often
+5-Always",IF ((Q70 == Never) || (Q70 == Rarely)) THEN 'B - Lack of resources',IF ('B - Lack of resources') THEN 'CM will check patient's transportation benefits and coordinate available community services which the patient can participate in.',IF ('B - Lack of resources') THEN 'Patient will use transportation and participate in community programs such as CBAS.',
+Home Safety,71,Do you feel safe at home?,Single,"1-Yes 
+2-No",IF (Q71 == No) THEN 'B - Safety barrier',IF ('B - Safety barrier') THEN 'CM will program care assistant to send an alert to patient to educate patient about this safety issue',IF ('B - Safety barrier') THEN 'System will alert patient links to assistance programs and educational information',
+Patient Engagement,72,"Is there a specific health, or any other type of problem(s) you would like to address first?",Single,"1-Yes 
+2-No",,,,
+,72 (a),If yes. Please list problem you would like to address first.,Text,FILL IN,,,,
+,73,"Are you, and/or your caregiver, willing to be part of ICT meetings? (An Interdisciplinary Care Team (ICT) is a team of individulas that work with you to help you meet your healthcare goals.)",Single,"1-Yes 
+2-No",,,,
+,74,Have you attended or received any educational classes/materials that focus on managing your health?,Single,"1-Yes 
+2-No",,,,
+,75,Do you want to receive any educational classes/materials that focus on managing your health?,Single,"1-Yes 
+2-No",,,,
