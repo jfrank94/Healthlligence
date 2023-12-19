@@ -1,0 +1,1 @@
+Past work from Healthllignece including Polygenic Risk Score analysis (PRS), photographic QC AI pipeline to process dental claims, and creating business logic for the CareAssistant platform. These repositories are for viewing only. They are not functional outside of the environments that they were created in. The PRS addition is still in progress due to large file sizes.
